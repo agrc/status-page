@@ -26,6 +26,6 @@ affectedsystems = ["Discover"]
 # resolved: marks an incident as resolved.
 # It can be either true or false.
 #
-resolved = false
+resolved = true
 +++
 The google cloud platform is having issues that is causing issues for discover. {{< track "2017-06-29T09:44:00.000Z" >}}
