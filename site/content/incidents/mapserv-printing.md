@@ -28,4 +28,5 @@ affectedsystems = ["gis servers"]
 #
 resolved = false
 +++
-mapserv services are throwing many errors. thanks jack. {< track "2017-06-29T16:18:01.789Z" >}}
+mapserv services are throwing many errors. thanks jack.
+{{< track "2017-06-29T16:18:01.789Z" >}}
