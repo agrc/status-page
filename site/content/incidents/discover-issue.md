@@ -28,4 +28,6 @@ affectedsystems = ["Discover"]
 #
 resolved = true
 +++
-The google cloud platform is having issues that is causing issues for discover. {{< track "2017-06-29T09:44:00.000Z" >}}
+The google cloud platform is having issues that is causing issues for discover. {{< track "2017-06-29T14:59:51.747Z" >}}
+
+**UPDATE** GCP got their act together. {{< track "2017-06-29T15:59:51.747Z" >}}
