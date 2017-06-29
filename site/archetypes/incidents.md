@@ -4,7 +4,7 @@
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
 date = {{ .Date }}
 
-# severity: represents the impact of 
+# severity: represents the impact of
 # your system due to the current incident.
 # This is the list of supported severities:
 #

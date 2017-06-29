@@ -14,4 +14,6 @@ title = "StatusKit"
 # you open or update an incident.
 # Example:
 # systems = ["API", "CDN", "DNS", "Site delivery"]
-systems = []
+systems = ["API", "gis servers", "discover"]
+
+metaDataFormat = "toml"
