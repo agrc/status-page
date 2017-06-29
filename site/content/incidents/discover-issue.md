@@ -1,9 +1,8 @@
 +++
 # default attributes for an incident.
 #
-# Hugo adds `title` and `date` by default
-# when running `hugo new incidents/new-incident.md`,
-# so we don't have to specify them here.
+title = "Discover Issue"
+date = 2017-06-29T16:15:01.789Z
 
 # severity: represents the impact of
 # your system due to the current incident.
