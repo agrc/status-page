@@ -29,4 +29,4 @@ resolved = true
 +++
 mapserv services are throwing many errors. thanks jack. {{< track "2017-06-29T16:18:01.789Z" >}}
 
-**Update**: We've identified the issue. {{ < track "2017-06-29T16:27:33.007Z" >}}
+**Update**: We've identified the issue. {{< track "2017-06-29T16:27:33.007Z" >}}
