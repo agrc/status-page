@@ -1,6 +1,6 @@
----
-title: "Web Api"
-date: 2017-07-17T14:25:09-06:00
++++
+title = "Web Api"
+date = 2017-07-17T14:25:09-06:00
 # severity: represents the impact of
 # your system due to the current incident.
 # This is the list of supported severities:
@@ -23,5 +23,5 @@ affectedsystems = ["API"]
 # It can be either true or false.
 #
 resolved = false
----
++++
 Spatial search is busted
