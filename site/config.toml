@@ -1,16 +1,12 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "StatusKit"
+title = "AGRC System Status"
 
 [permalinks]
   incidents = "/incidents/:year/:month/:day/:slug/"
 
 [params]
-  defaultLogo = "https://www.netlify.com/img/press/logos/logomark.svg"
-  faviconsPath = "/images/favicon/"
+  defaultLogo = "/images/agrc.svg"
+  faviconsPath = "https://gis.utah.gov/images/favicon.ico?"
 
-# List of systems monitored in this status page.
-# You'll be able to change their status every time
-# you open or update an incident.
-# Replace these examples with your own system names.
-systems = ["API", "CDN", "DNS", "Site delivery"]
+systems = ["Web API", "mapserv", "discover", "SGID", "license manager", "gis.utah.gov"]
