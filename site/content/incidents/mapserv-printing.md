@@ -1,8 +1,8 @@
 +++
 # default attributes for an incident.
 #
-title = "Mapserv Printing"
-date = 2017-06-29T16:16:01.789Z
+title = "mapserv configuration storage"
+date = 2017-08-28T11:08:01.789Z
 
 # severity: represents the impact of
 # your system due to the current incident.
@@ -13,20 +13,20 @@ date = 2017-06-29T16:16:01.789Z
 # - partial-outage
 # - major-outage
 #
-severity = "partial-outage"
+severity = "major-outage"
 
 # affectedsystems: is a list of systems affected
 # by the incident.
 # Example:
 # affectedsystems = ["API", "Build servers"]
 #
-affectedsystems = ["gis servers"]
+affectedsystems = ["mapserv"]
 
 # resolved: marks an incident as resolved.
 # It can be either true or false.
 #
 resolved = true
 +++
-mapserv services are throwing many errors. thanks jack. {{< track "2017-06-29T16:18:01.789Z" >}}
+The storage volume for the mapserv configuration was renamed. This has caused a slow degradation until a full outage has been notified.
 
-**Update**: We've identified the issue. {{< track "2017-06-29T16:27:33.007Z" >}}
+**Update**: Capitol hosting has repaired the volume name. {{< track "2017-08-28T12:35:33.007Z" >}}
