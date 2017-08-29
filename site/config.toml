@@ -9,4 +9,4 @@ title = "AGRC System Status"
   defaultLogo = "/images/agrc.svg"
   faviconsPath = "https://gis.utah.gov/images/favicon.ico?"
 
-systems = ["Web API", "mapserv", "discover", "SGID", "license manager", "gis.utah.gov"]
+systems = ["discover", "SGID", "license manager", "gis.utah.gov", "web api", "mapserv", ]
