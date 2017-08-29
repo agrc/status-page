@@ -13,12 +13,12 @@ date = {{ .Date }}
 # - partial-outage
 # - major-outage
 #
-severity = "degraded-performance"
+severity = "under-maintenance"
 
 # affectedsystems: is a list of systems affected
 # by the incident.
 # Example:
-# affectedsystems = ["Web API", "mapserv", "discover", "SGID", "license manager", "gis.utah.gov"]
+# affectedsystems = ["discover", "SDE", "license manager", "gis.utah.gov", "web api", "mapserv"]
 #
 affectedsystems = []
 
