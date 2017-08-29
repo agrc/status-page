@@ -2,7 +2,7 @@
 # default attributes for an incident.
 #
 title = "mapserv configuration storage"
-date = 2017-08-28T11:08:01.789-06:00
+date = 2017-08-28T11:08:01-06:00
 
 # severity: represents the impact of
 # your system due to the current incident.
@@ -29,4 +29,4 @@ resolved = true
 +++
 The storage volume for the mapserv configuration was renamed. This has caused a slow degradation until a full outage has been notified.
 
-**Update**: Capitol hosting has repaired the volume name. {{< track "2017-08-28T12:35:33.007-06:00" >}}
+**Update**: Capitol hosting has repaired the volume name. {{< track "2017-08-28T12:35:33-06:00" >}}
