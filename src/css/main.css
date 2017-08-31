@@ -233,11 +233,6 @@ a:active {
 .mute {
   opacity: 0.7;
 }
-
-.small {
-  font-size: 14px;
-}
-
 .incident-summary {
   margin-bottom: 24px;
   overflow: hidden;
