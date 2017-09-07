@@ -25,6 +25,8 @@ affectedsystems = ['web api']
 # resolved: marks an incident as resolved.
 # It can be either true or false.
 #
-resolved = false
+resolved = true
 +++
 It has been brought to our attention that emails are not being sent since August 23rd when signing up for new accounts etc. An incident has been created with our hosting provider and should be resolved soon.
+
+The issue has been resolved and we will be sending out the backlog of emails shortly. {{< track "2017-09-07T23:41:51Z" >}}
