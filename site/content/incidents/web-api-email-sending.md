@@ -30,3 +30,5 @@ resolved = true
 It has been brought to our attention that emails are not being sent since August 23rd when signing up for new accounts etc. An incident has been created with our hosting provider and should be resolved soon.
 
 The issue has been resolved and we will be sending out the backlog of emails shortly. {{< track "2017-09-07T23:41:51Z" >}}
+
+The backlog of emails have all been sent. {{< track "2017-09-08T00:19:30Z" >}}
