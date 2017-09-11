@@ -1,7 +1,7 @@
 +++
 # default attributes for an incident.
 #
-title = "mapserv.utah.gov not serving applications"
+title = "mapserv.utah.gov not serving static files"
 date = 2017-09-11T08:00:23-06:00
 
 # severity: represents the impact of
@@ -13,7 +13,7 @@ date = 2017-09-11T08:00:23-06:00
 # - partial-outage
 # - major-outage
 #
-severity = "major-outage"
+severity = "partial-outage"
 
 # affectedsystems: is a list of systems affected
 # by the incident.
@@ -27,6 +27,6 @@ affectedsystems = ["mapserv"]
 #
 resolved = true
 +++
-IIS is not serving up websites on our production web server that hosts mapserv.utah.gov as well as a variety of other domains. We believe that this is caused by an outage with our security software. DTS is aware of the issue and is working to resolve it.
+The mapserv web server is not serving static content items (html, css, images, javascript) as well as a variety of other domains. This is caused by an outage with our hosting companies security software (OpenAM). They are aware of the issue and is working to resolve it.
 
-**Update**: OpenAM (the cause of the outage) has come back online and everything is back to normal. {{< track "2017-09-11T09:40:00-06:00" >}}
+**Update**: OpenAM (the cause of the outage) has come back online and everything is operating normally. {{< track "2017-09-11T09:40:00-06:00" >}}
