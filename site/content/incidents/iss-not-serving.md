@@ -25,6 +25,8 @@ affectedsystems = ["mapserv"]
 # resolved: marks an incident as resolved.
 # It can be either true or false.
 #
-resolved = false
+resolved = true
 +++
 IIS is not serving up websites on our production web server that hosts mapserv.utah.gov as well as a variety of other domains. We believe that this is caused by an outage with our security software. DTS is aware of the issue and is working to resolve it.
+
+**Update**: OpenAM (the cause of the outage) has come back online and everything is back to normal. {{< track "2017-09-11T09:40:00-06:00" >}}
