@@ -2,7 +2,7 @@
 # default attributes for an incident.
 #
 title = "mapserv.utah.gov not serving applications"
-date = 2017-09-11T09:00:23-06:00
+date = 2017-09-11T08:00:23-06:00
 
 # severity: represents the impact of
 # your system due to the current incident.
