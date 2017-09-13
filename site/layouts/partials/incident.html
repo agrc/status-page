@@ -3,7 +3,7 @@
 <div class="incident card">
   <div class="flex-out">
     <h1 class="incident-title">{{ .Title }}</h1>
-    <p class="small mute">{{- dateFormat "02 Jan 2006 15:04 MST" .Date -}}</p>
+    <p class="small mute">{{- dateFormat "02 Jan 2006 15:04 MST" .Date.Local -}}</p>
   </div>
   <div class="incident-description">
     {{- .Content -}}
