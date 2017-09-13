@@ -179,6 +179,8 @@ ${answers.description}`;
 }
 
 function buildSite(cb, options) {
+  cp.spawn(hugoBin, ["version"], {stdio: "inherit"});
+
   let args = options ? defaultArgs.concat(options) : defaultArgs;
   args = args.concat(buildArgs);
 
