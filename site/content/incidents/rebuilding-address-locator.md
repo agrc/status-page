@@ -1,0 +1,12 @@
++++
+title = "rebuilding address locator"
+date = 2017-09-21T20:10:10.000Z
+severity = "partial-outage"
+affectedsystems = [
+  "web api"
+]
+resolved = true
++++
+**Cause** One of the locators used for geocoding hung during the publish step of an update. This could have caused a reduction in geocoding matches and scoring.
+
+**Resolution** The service was restarted and the republished.  {{<track "2017-09-21T20:12:10.000Z">}}
