@@ -7,7 +7,7 @@ googleAnalytics = "UA-11849964-59"
   incidents = "/incidents/:year/:month/:day/:slug/"
 
 [params]
-  DateForm = "2006 Jan 01 1:04 AM"
+  DateForm = "2006 Jan 01 3:04 PM"
   defaultLogo = "/images/agrc.svg"
   faviconsPath = "https://gis.utah.gov/images/favicon.ico?"
 
