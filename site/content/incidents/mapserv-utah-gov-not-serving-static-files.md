@@ -1,6 +1,6 @@
 +++
 title = "mapserv.utah.gov not serving static files"
-date = 2017-10-02T17:10:38-06:00
+date = 2017-10-02T19:10:38-06:00
 severity = "partial-outage"
 affectedsystems = [
   "mapserv"
