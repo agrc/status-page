@@ -2,7 +2,7 @@
 # default attributes for an incident.
 #
 title = "{{ replace .TranslationBaseName "-" " " | title }}"
-date = {{ .Date }}
+date = {{ dateFormat "2006-01-02T15:04:05" .Date }}
 
 # severity: represents the impact of
 # your system due to the current incident.
