@@ -1,4 +1,5 @@
 @import "imports/reset.css";
+@import "imports/header.css";
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -24,22 +25,6 @@ a:active {
   padding-bottom: 104px;
 }
 
-.header {
-  margin-bottom: 40px;
-  padding: 16px 0 24px 0;
-  border-bottom: 2px solid #F7F7F8;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.logo {
-  position: relative;
-  top: 4px;
-  height: 24px;
-  margin-right: 8px;
-}
-
 .title {
   font-size: 21px;
   font-weight: 500;
@@ -58,11 +43,6 @@ a:active {
 @media (max-width: 450px) {
   .right-links {
     margin-top: 24px;
-  }
-
-  .header {
-    padding-bottom: 68px;
-    flex-direction: column;
   }
 }
 
