@@ -1,5 +1,5 @@
 +++
-title = "Stopped Locators"
+title = "Geocoding Locators locked from starting"
 date = 2018-02-01T04:02:33.000Z
 severity = "partial-outage"
 affectedsystems = [
