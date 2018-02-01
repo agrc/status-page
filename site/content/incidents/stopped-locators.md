@@ -7,4 +7,4 @@ affectedsystems = [
 ]
 resolved = false
 +++
-Forklift updated the geocoding api locators and they did not restart properly.
+Forklift updated the geocoding api locators and they did not restart properly. All geocoding is returning not found.
