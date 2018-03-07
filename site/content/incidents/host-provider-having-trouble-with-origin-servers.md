@@ -5,6 +5,6 @@ severity = "major-outage"
 affectedsystems = [
   "gis.utah.gov"
 ]
-resolved = false
+resolved = true
 +++
 netlify is having issues with it's origin servers which has brough down gis.utah.gov. Follow allong at netlifystatus.com for updates.
