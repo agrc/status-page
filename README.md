@@ -30,7 +30,7 @@ npm run new-incident
 
 You'll be asked a series of questions about the incident, then Hugo will generate a new file pre-filled with your responses.
 
-After explaining the current situation in the incident, you can just push the file to GitHub. Netlify will deploy the indicent announcement for you in a matter of seconds.
+After explaining the current situation in the incident, you can just push the file to GitHub. Netlify will deploy the incident announcement for you in a matter of seconds.
 
 ### Resolving incidents
 
