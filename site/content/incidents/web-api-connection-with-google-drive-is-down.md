@@ -5,6 +5,6 @@ severity = "major-outage"
 affectedsystems = [
   "web api"
 ]
-resolved = false
+resolved = true
 +++
 The webapi reads data from a Google Drive spreadsheet on initialization. Something is causing it to crash when it tries to authenticate.
