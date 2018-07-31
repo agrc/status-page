@@ -5,7 +5,7 @@ severity = "under-maintenance"
 affectedsystems = [
   "mapserv"
 ]
-resolved = false
+resolved = true
 +++
 ### mapserv.utah.gov and all websites using mapserv services will be unavailable July 30th ftom 18:00 to 19:00.
 
