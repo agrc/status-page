@@ -11,3 +11,7 @@ Three raster mosaics have become corrupted on mapserv. The NAIP 2011, 2014, and 
 
 ## Update
 All of the image services are up and running other than NAIP 2011. The overviews for it are currently rebuilding. NAIP 2016 is up and running but showing the checkerboard pattern. The overviews will be rebuilt tonight or tomorrow morning. {{< track "2018-07-31T16:08:53.000Z" >}}
+
+## Update 2
+NAIP 2011 is back online. NAIP 2016 is stopped and rebuilding to fix the checkerboard pattern. {{< track "2018-08-01T12:08:53.000Z" >}}
+
