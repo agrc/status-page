@@ -15,3 +15,6 @@ We are working hard to generate new tiles. There's currently no ETA on when they
 
 ## Update
 All tiles in levels 0 through 16 have now been restored. Work continues on levels 17-19. {{< track "2018-12-21T12:15:00.000Z" >}}
+
+## Update 2
+Levels 17-19 have been generated and are currently being uploaded. {{< track "2018-12-27T07:15:00.000Z" >}}
