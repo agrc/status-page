@@ -5,7 +5,7 @@ severity = "partial-outage"
 affectedsystems = [
   "discover"
 ]
-resolved = false
+resolved = true
 +++
 Tiles outside of Salt Lake, Morgan and Weber counties were accidentally removed from the discover servers.
 
@@ -18,3 +18,6 @@ All tiles in levels 0 through 16 have now been restored. Work continues on level
 
 ## Update 2
 Levels 17-19 have been generated and are currently being uploaded. {{< track "2018-12-27T07:15:00.000Z" >}}
+
+## Update 3
+All tiles have been restored. {{< track "2018-12-31T09:13:00.000Z" >}}
