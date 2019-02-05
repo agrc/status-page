@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "hugo": "gulp hugo",
-    "webpack": "gulp webpack",
     "build": "gulp build",
     "build-preview": "gulp buildPreview",
     "start": "gulp server",
-    "lint": "eslint src gulpfile.babel.js webpack.conf.js",
+    "lint": "eslint src gulpfile.babel.js",
     "new-incident": "gulp newIncident"
   },
   "author": "",
