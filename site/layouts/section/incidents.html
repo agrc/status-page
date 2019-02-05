@@ -1,7 +1,7 @@
 {{ partial "header" . }}
 
 <div class="incidents">
-{{ range (.Paginate .Data.Pages.ByPublishDate 15 ).Pages }}
+{{ range (.Paginate .Data.Pages.ByPublishDate.Reverse 10 ).Pages }}
 <div class="incident-summary flex-out">
   <a href="{{ .Permalink }}" class="article article-title">
     {{ .Title }}
