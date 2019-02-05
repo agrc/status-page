@@ -1,18 +1,15 @@
-import gulp from "gulp";
+import babel from "gulp-babel";
+import BrowserSync from "browser-sync";
 import cp from "child_process";
-import PluginError from "plugin-error";
-import log from "fancy-log";
-import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
 import cssnext from "postcss-preset-env";
-import BrowserSync from "browser-sync";
-import webpack from "webpack";
-import webpackConfig from "./webpack.conf";
-import inquirer from "inquirer";
-import toml from "tomljs";
 import fs from "fs";
-import path from "path";
+import gulp from "gulp";
+import inquirer from "inquirer";
 import kebabCase from "lodash.kebabcase";
+import path from "path";
+import postcss from "gulp-postcss";
+import toml from "tomljs";
 import tomlify from "tomlify-j0.4";
 
 const browserSync = BrowserSync.create();
@@ -68,28 +65,16 @@ export const hugoPreview = (cb) => buildSite(cb, ["--buildDrafts", "--buildFutur
 export const build = () => gulp.series(gulp.parallel(css, js), hugo);
 export const buildPreview = () => gulp.series(gulp.parallel(css, js), hugoPreview);
 
-export const css = () => {
-  return gulp.src("./src/css/*.css")
-    .pipe(postcss([cssnext(), cssImport({
-      from: "./src/css/main.css"
-    })]))
-    .pipe(gulp.dest("./dist/css"))
-    .pipe(browserSync.stream());
-};
+export const css = () => gulp.src("./src/css/**/*.css")
+  .pipe(postcss([cssnext(), cssImport({
+    from: "./src/css/main.css"
+  })]))
+  .pipe(gulp.dest("./dist/css"))
+  .pipe(browserSync.stream());
 
-export const js = (cb) => {
-  const myConfig = Object.assign({}, webpackConfig);
-
-  webpack(myConfig, (err, stats) => {
-    if (err) throw new PluginError("webpack", err);
-    log("[webpack]", stats.toString({
-      colors: true,
-      progress: true
-    }));
-    browserSync.reload();
-    cb();
-  });
-};
+export const js = () => gulp.src("./src/js/*.js")
+  .pipe(babel())
+  .pipe(gulp.dest("./dist/js"));
 
 export const server = gulp.series(gulp.parallel(css, js), hugo, (cb) => {
   browserSync.init({
