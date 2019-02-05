@@ -22,15 +22,15 @@ const defaultArgs = ["-s", "site", "-v"];
 const buildArgs = ["-d", "../dist"];
 
 function getPlatform(platform) {
-    switch (platform) {
-      case "win32":
-      case "win64": {
-        return "windows";
-      }
-      default: {
-        return platform
-      }
+  switch (platform) {
+    case "win32":
+    case "win64": {
+      return "windows";
     }
+    default: {
+      return platform
+    }
+  }
 }
 
 function generateFrontMatter(frontMatter, answers) {
@@ -41,13 +41,13 @@ ${answers.description}`;
 }
 
 function buildSite(cb, options) {
-  cp.spawn(hugoBin, ["version"], {stdio: "inherit"});
+  cp.spawn(hugoBin, ["version"], { stdio: "inherit" });
 
   let args = options ? defaultArgs.concat(options) : defaultArgs;
   args = args.concat(buildArgs);
 
   // cp needs to be in site directory
-  return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
+  return cp.spawn(hugoBin, args, { stdio: "inherit" }).on("close", (code) => {
     if (code === 0) {
       browserSync.reload();
       cb();
