@@ -28,7 +28,7 @@ function getPlatform(platform) {
       return "windows";
     }
     default: {
-      return platform
+      return platform;
     }
   }
 }
@@ -41,13 +41,17 @@ ${answers.description}`;
 }
 
 function buildSite(cb, options) {
-  cp.spawn(hugoBin, ["version"], { stdio: "inherit" });
+  cp.spawn(hugoBin, ["version"], {
+    stdio: "inherit"
+  });
 
   let args = options ? defaultArgs.concat(options) : defaultArgs;
   args = args.concat(buildArgs);
 
   // cp needs to be in site directory
-  return cp.spawn(hugoBin, args, { stdio: "inherit" }).on("close", (code) => {
+  return cp.spawn(hugoBin, args, {
+    stdio: "inherit"
+  }).on("close", (code) => {
     if (code === 0) {
       browserSync.reload();
       cb();
