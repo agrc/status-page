@@ -37,7 +37,7 @@ ${tomlify.toToml(frontMatter, null, 2)}
 ${answers.description}`;
 }
 
-function buildSite(cb, options) {
+function buildSite(done, options) {
   cp.spawn(hugoBin, ["version"], {
     stdio: "inherit"
   });
@@ -51,19 +51,19 @@ function buildSite(cb, options) {
   }).on("close", (code) => {
     if (code === 0) {
       browserSync.reload();
-      cb();
+      done();
     } else {
       browserSync.notify("Hugo build failed :(");
-      cb("Hugo build failed");
+      done("Hugo build failed");
     }
   });
 }
 
-const hugo = (cb) => buildSite(cb);
-export const hugoPreview = (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]);
+const hugo = (done) => buildSite(done);
+export const hugoPreview = (done) => buildSite(done, ["--buildDrafts", "--buildFuture"]);
 
-export const build = () => gulp.series(gulp.parallel(css, js), hugo);
-export const buildPreview = () => gulp.series(gulp.parallel(css, js), hugoPreview);
+export const build = (done) => gulp.series(gulp.parallel(css, js), hugo(done));
+export const buildPreview = (done) => gulp.series(gulp.parallel(css, js), hugoPreview(done));
 
 export const css = () => gulp.src("./src/css/**/*.css")
   .pipe(postcss([cssnext(), cssImport({
@@ -76,7 +76,7 @@ export const js = () => gulp.src("./src/js/*.js")
   .pipe(babel())
   .pipe(gulp.dest("./dist/js"));
 
-export const server = gulp.series(gulp.parallel(css, js), hugo, (cb) => {
+export const server = gulp.series(gulp.parallel(css, js), hugo, (done) => {
   browserSync.init({
     server: {
       baseDir: "./dist"
@@ -85,10 +85,10 @@ export const server = gulp.series(gulp.parallel(css, js), hugo, (cb) => {
   gulp.watch("./src/js/**/*.js", js);
   gulp.watch("./src/css/**/*.css", css);
   gulp.watch("./site/**/*", hugo);
-  cb();
+  done();
 });
 
-export const newIncident = (cb) => {
+export const newIncident = (done) => {
   const file = fs.readFileSync("site/config.toml").toString();
   const config = toml(file);
 
@@ -183,9 +183,9 @@ export const newIncident = (cb) => {
 
     hugo.on("close", (code) => {
       if (code === 0) {
-        cb();
+        done();
       } else {
-        cb("new incident creation failed");
+        done("new incident creation failed");
       }
     });
   });
