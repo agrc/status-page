@@ -1,9 +1,10 @@
 import gulp from "gulp";
 import cp from "child_process";
-import gutil from "gulp-util";
+import PluginError from "plugin-error";
+import log from "fancy-log";
 import postcss from "gulp-postcss";
 import cssImport from "postcss-import";
-import cssnext from "postcss-cssnext";
+import cssnext from "postcss-preset-env";
 import BrowserSync from "browser-sync";
 import webpack from "webpack";
 import webpackConfig from "./webpack.conf";
@@ -16,49 +17,89 @@ import tomlify from "tomlify-j0.4";
 
 const browserSync = BrowserSync.create();
 const platform = getPlatform(process.platform);
-const hugoBin = `./bin/hugo_0.26_${platform}_amd64${platform === "windows" ? ".exe" : ""}`;
+const hugoBin = `./bin/hugo_0.54_${platform}_amd64${platform === "windows" ? ".exe" : ""}`;
 const defaultArgs = ["-s", "site", "-v"];
 const buildArgs = ["-d", "../dist"];
 
-gulp.task("hugo", (cb) => buildSite(cb));
-gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
+function getPlatform(platform) {
+    switch (platform) {
+      case "win32":
+      case "win64": {
+        return "windows";
+      }
+      default: {
+        return platform
+      }
+    }
+}
 
-gulp.task("build", ["css", "js", "hugo"]);
-gulp.task("build-preview", ["css", "js", "hugo-preview"]);
+function generateFrontMatter(frontMatter, answers) {
+  return `+++
+${tomlify.toToml(frontMatter, null, 2)}
++++
+${answers.description}`;
+}
 
-gulp.task("css", () => (
-  gulp.src("./src/css/*.css")
-    .pipe(postcss([cssnext(), cssImport({from: "./src/css/main.css"})]))
+function buildSite(cb, options) {
+  cp.spawn(hugoBin, ["version"], {stdio: "inherit"});
+
+  let args = options ? defaultArgs.concat(options) : defaultArgs;
+  args = args.concat(buildArgs);
+
+  // cp needs to be in site directory
+  return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
+    if (code === 0) {
+      browserSync.reload();
+      cb();
+    } else {
+      browserSync.notify("Hugo build failed :(");
+      cb("Hugo build failed");
+    }
+  });
+}
+
+const hugo = (cb) => buildSite(cb);
+export const hugoPreview = (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]);
+
+export const build = () => gulp.series(gulp.parallel(css, js), hugo);
+export const buildPreview = () => gulp.series(gulp.parallel(css, js), hugoPreview);
+
+export const css = () => {
+  return gulp.src("./src/css/*.css")
+    .pipe(postcss([cssnext(), cssImport({
+      from: "./src/css/main.css"
+    })]))
     .pipe(gulp.dest("./dist/css"))
-    .pipe(browserSync.stream())
-));
+    .pipe(browserSync.stream());
+};
 
-gulp.task("js", (cb) => {
+export const js = (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
 
   webpack(myConfig, (err, stats) => {
-    if (err) throw new gutil.PluginError("webpack", err);
-    gutil.log("[webpack]", stats.toString({
+    if (err) throw new PluginError("webpack", err);
+    log("[webpack]", stats.toString({
       colors: true,
       progress: true
     }));
     browserSync.reload();
     cb();
   });
-});
+};
 
-gulp.task("server", ["hugo", "css", "js"], () => {
+export const server = gulp.series(gulp.parallel(css, js), hugo, (cb) => {
   browserSync.init({
     server: {
       baseDir: "./dist"
     }
   });
-  gulp.watch("./src/js/**/*.js", ["js"]);
-  gulp.watch("./src/css/**/*.css", ["css"]);
-  gulp.watch("./site/**/*", ["hugo"]);
+  gulp.watch("./src/js/**/*.js", js);
+  gulp.watch("./src/css/**/*.css", css);
+  gulp.watch("./site/**/*", hugo);
+  cb();
 });
 
-gulp.task("new-incident", (cb) => {
+export const newIncident = (cb) => {
   const file = fs.readFileSync("site/config.toml").toString();
   const config = toml(file);
 
@@ -105,7 +146,9 @@ gulp.task("new-incident", (cb) => {
     let args = ["new", `incidents${path.sep}${kebabCase(answers.name)}.md`];
     args = args.concat(defaultArgs);
 
-    const hugo = cp.spawn(hugoBin, args, {stdio: "pipe"});
+    const hugo = cp.spawn(hugoBin, args, {
+      stdio: "pipe"
+    });
     hugo.stdout.on("data", (data) => {
       const message = data.toString();
 
@@ -157,41 +200,6 @@ gulp.task("new-incident", (cb) => {
       }
     });
   });
-});
+};
 
-function getPlatform(platform) {
-    switch (platform) {
-      case "win32":
-      case "win64": {
-        return "windows";
-      }
-      default: {
-        return platform
-      }
-    }
-}
-
-function generateFrontMatter(frontMatter, answers) {
-  return `+++
-${tomlify(frontMatter, null, 2)}
-+++
-${answers.description}`;
-}
-
-function buildSite(cb, options) {
-  cp.spawn(hugoBin, ["version"], {stdio: "inherit"});
-
-  let args = options ? defaultArgs.concat(options) : defaultArgs;
-  args = args.concat(buildArgs);
-
-  // cp needs to be in site directory
-  return cp.spawn(hugoBin, args, {stdio: "inherit"}).on("close", (code) => {
-    if (code === 0) {
-      browserSync.reload();
-      cb();
-    } else {
-      browserSync.notify("Hugo build failed :(");
-      cb("Hugo build failed");
-    }
-  });
-}
+export default hugo;
