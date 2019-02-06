@@ -37,7 +37,7 @@ ${tomlify.toToml(frontMatter, null, 2)}
 ${answers.description}`;
 }
 
-function buildSite(done, options) {
+const hugo = (done, options) => {
   cp.spawn(hugoBin, ["version"], {
     stdio: "inherit"
   });
@@ -46,7 +46,7 @@ function buildSite(done, options) {
   args = args.concat(buildArgs);
 
   // cp needs to be in site directory
-  return cp.spawn(hugoBin, args, {
+  cp.spawn(hugoBin, args, {
     stdio: "inherit"
   }).on("close", (code) => {
     if (code === 0) {
@@ -57,11 +57,11 @@ function buildSite(done, options) {
       done("Hugo build failed");
     }
   });
-}
 
-const hugo = (done) => buildSite(done);
-export const hugoPreview = (done) => buildSite(done, ["--buildDrafts", "--buildFuture"]);
+  return done;
+};
 
+export const hugoPreview = (done) => hugo(done, ["--buildDrafts", "--buildFuture"]);
 export const build = (done) => gulp.series(gulp.parallel(css, js), hugo(done));
 export const buildPreview = (done) => gulp.series(gulp.parallel(css, js), hugoPreview(done));
 
@@ -74,7 +74,8 @@ export const css = () => gulp.src("./src/css/**/*.css")
 
 export const js = () => gulp.src("./src/js/*.js")
   .pipe(babel())
-  .pipe(gulp.dest("./dist/js"));
+  .pipe(gulp.dest("./dist/js"))
+  .pipe(browserSync.stream());
 
 export const server = gulp.series(gulp.parallel(css, js), hugo, (done) => {
   browserSync.init({
