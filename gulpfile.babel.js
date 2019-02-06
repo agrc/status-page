@@ -3,6 +3,7 @@ import BrowserSync from "browser-sync";
 import cp from "child_process";
 import cssImport from "postcss-import";
 import cssnext from "postcss-preset-env";
+import del from "del";
 import fs from "fs";
 import gulp from "gulp";
 import inquirer from "inquirer";
@@ -61,23 +62,17 @@ const hugo = (done, options) => {
   return done;
 };
 
-export const hugoPreview = (done) => hugo(done, ["--buildDrafts", "--buildFuture"]);
-export const build = (done) => gulp.series(gulp.parallel(css, js), hugo(done));
-export const buildPreview = (done) => gulp.series(gulp.parallel(css, js), hugoPreview(done));
-
 export const css = () => gulp.src("./src/css/**/*.css")
   .pipe(postcss([cssnext(), cssImport({
     from: "./src/css/main.css"
   })]))
-  .pipe(gulp.dest("./dist/css"))
-  .pipe(browserSync.stream());
+  .pipe(gulp.dest("./dist/css"));
 
 export const js = () => gulp.src("./src/js/*.js")
   .pipe(babel())
-  .pipe(gulp.dest("./dist/js"))
-  .pipe(browserSync.stream());
+  .pipe(gulp.dest("./dist/js"));
 
-export const server = gulp.series(gulp.parallel(css, js), hugo, (done) => {
+export const server = gulp.series(gulp.parallel(css, js), hugo, () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
@@ -86,7 +81,6 @@ export const server = gulp.series(gulp.parallel(css, js), hugo, (done) => {
   gulp.watch("./src/js/**/*.js", js);
   gulp.watch("./src/css/**/*.css", css);
   gulp.watch("./site/**/*", hugo);
-  done();
 });
 
 export const newIncident = (done) => {
@@ -192,4 +186,8 @@ export const newIncident = (done) => {
   });
 };
 
+export const clean = (done) => del(["dist"], done);
+export const hugoPreview = (done) => hugo(done, ["--buildDrafts", "--buildFuture"]);
+export const build = gulp.series(clean, gulp.parallel(css, js), hugo);
+export const buildPreview = gulp.series(clean, gulp.parallel(css, js), hugoPreview);
 export default hugo;
