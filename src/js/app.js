@@ -1,7 +1,11 @@
 // JS Goes here - ES6 supported
-const daysSince = document.getElementById("days-since-latest");
+const startup = () => {
+  const daysSince = document.getElementById("days-since-latest");
 
-if (daysSince) {
+  if (!daysSince) {
+    return;
+  }
+
   const aDay = 1000 * 60 * 60 * 24;
 
   const dateSince = new Date(daysSince.getAttribute("data-latest-incident-date"));
@@ -13,4 +17,6 @@ if (daysSince) {
 
   const count = endDays === 1 ? `${endDays} day` : `${endDays} days`;
   daysSince.innerHTML = `${count} since last incident`;
-}
+};
+
+startup();
