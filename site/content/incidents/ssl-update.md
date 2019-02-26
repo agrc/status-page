@@ -7,7 +7,7 @@ resolved = false
 +++
 The web server that hosts AGRC mapping websites will have its' SSL/TLS settings updated to be [more secure](https://www.ssllabs.com/ssltest/analyze.html?d=atlas.utah.gov). We will be dropping SSL 2 and 3 support as well as older ciphers.
 
-The update will need a reboot which is scheduled for Thursday, February 28th at 6:30AM MST. If there are any issues,
+The update is scheduled for Thursday, February 28th at 6:30AM MST. If there are any issues,
 
 1. The changes will be rolled back
 1. We will address the issues
