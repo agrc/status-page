@@ -3,7 +3,7 @@ title = "SSL update"
 date = 2019-02-26T18:26:30.000Z
 severity = "under-maintenance"
 affectedsystems = ["mapserv"]
-resolved = false
+resolved = true
 +++
 The web server that hosts AGRC mapping websites will have its' SSL/TLS settings updated to be [more secure](https://www.ssllabs.com/ssltest/analyze.html?d=atlas.utah.gov). We will be dropping SSL 2 and 3 support as well as older ciphers.
 
