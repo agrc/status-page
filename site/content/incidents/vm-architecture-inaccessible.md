@@ -1,6 +1,6 @@
 +++
 title = "VM architecture inaccessible"
-date = 2019-04-19T18:45:45.000Z
+date = 2019-04-18T18:45:45.000Z
 severity = "major-outage"
 affectedsystems = ["web api", "mapserv"]
 resolved = false
