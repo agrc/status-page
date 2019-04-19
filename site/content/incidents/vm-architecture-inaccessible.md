@@ -10,3 +10,7 @@ All AGRC web servers and GIS servers that are hosted in the Capitol Datacenter a
 ## Update
 
 All of the services are returning to green. We are working with Capitol Hosting to determine the cause. We will continue to monitor for issues. {{< track "2019-04-18T19:35:25.000Z" >}}
+
+## Postmortem
+
+The primary network load balancer that handles all of the mapserv traffic failed. The fail over load balancer did not take control. Capitol Hosting is investigatting both failures. {{< track "2019-04-18T19:42:25.000Z" >}}
