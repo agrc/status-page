@@ -5287,8 +5287,8 @@ tomljs@^0.1.3:
   resolved "https://registry.yarnpkg.com/tomljs/-/tomljs-0.1.3.tgz#8d1b8d1756e0389cce76ff10d86c4d86a34e0008"
 
 tough-cookie@~2.3.0:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.2.tgz#f081f76e4c85720e6c37a5faced737150d84072a"
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-2.3.4.tgz#ec60cee38ac675063ffc97a5c18970578ee83655"
   dependencies:
     punycode "^1.4.1"
 
