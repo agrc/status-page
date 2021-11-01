@@ -7,3 +7,7 @@ resolved = false
 +++
 
 We are investigating reports of degraded access to the license manager. Users are unable to consistently checkout and keep a license.
+
+## Update
+
+The problem was identified and settings to the software were updated. {{< track "2021-10-29T13:05:45.000Z" >}}
