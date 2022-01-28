@@ -7,4 +7,4 @@ resolved = true
 +++
 The server that supports api.mapserv.utah.gov is not responding. Hosting has been contacted and are working on a fix.
 
-**Update**: The issue appears to be related to a network issue. Everything seems to be working normally now. {{< track 2022-01-28T10:10:28.000Z >}}
+**Update**: The issue appears to be related to a network issue. Everything seems to be working normally now. {{< track "2022-01-28T10:10:28.000Z" >}}
