@@ -1,10 +1,10 @@
 +++
 title = "Web API Server Not Responding"
-date = 2022-01-28T16:42:28.000Z
+date = 2022-01-28T09:42:28.000Z
 severity = "major-outage"
 affectedsystems = ["web api"]
 resolved = true
 +++
 The server that supports api.mapserv.utah.gov is not responding. Hosting has been contacted and are working on a fix.
 
-**Update**: The issue appears to be related to a network issue. Everything seems to be working normally now. {{< track 2022-01-28T17:10:28.000Z >}}
+**Update**: The issue appears to be related to a network issue. Everything seems to be working normally now. {{< track 2022-01-28T10:10:28.000Z >}}
