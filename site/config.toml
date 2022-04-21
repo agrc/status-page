@@ -1,6 +1,6 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "AGRC System Status"
+title = "UGRC System Status"
 googleAnalytics = "UA-11849964-59"
 
 [permalinks]
@@ -8,7 +8,7 @@ googleAnalytics = "UA-11849964-59"
 
 [params]
   DateForm = "2006 Jan 02 3:04 PM"
-  defaultLogo = "/images/agrc.svg"
+  defaultLogo = "/images/ugrc.svg"
   faviconsPath = "https://gis.utah.gov/images/favicon.ico?"
 
 systems = ["discover", "SDE", "license manager", "gis.utah.gov", "web api", "mapserv"]
