@@ -4,11 +4,18 @@ title = "UGRC System Status"
 googleAnalytics = "UA-11849964-59"
 
 [permalinks]
-  incidents = "/incidents/:year/:month/:day/:slug/"
+incidents = "/incidents/:year/:month/:day/:slug/"
 
 [params]
-  DateForm = "2006 Jan 02 3:04 PM"
-  defaultLogo = "/images/ugrc.svg"
-  faviconsPath = "https://gis.utah.gov/images/favicon.ico?"
+DateForm = "2006 Jan 02 3:04 PM"
+defaultLogo = "/images/ugrc.svg"
+faviconsPath = "https://gis.utah.gov/images/favicon.ico?"
 
-systems = ["discover", "SDE", "license manager", "gis.utah.gov", "web api", "mapserv"]
+systems = [
+  "discover",
+  "open sgid",
+  "license manager",
+  "gis.utah.gov",
+  "web api",
+  "mapserv",
+]
