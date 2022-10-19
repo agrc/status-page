@@ -9,3 +9,6 @@ Core equipment for the State Network is having issues. Traffic to the Taylorsvil
 
 **Update** Network Operations have narrowed down the issue to hardware on our WAN core infrastructure. Some services are starting to come back online but many of the services that reside behind a specific firewall are still inaccessible. We are working to replace the faulty piece of hardware and continue restoring connections. Thanks again for your patience.
 {{< track "2022-10-19T13:23:00.000Z" >}}
+
+**Update** New hardware has been installed and testing has begin. Network Operations are still working through some issues.
+{{< track "2022-10-19T14:50:00.000Z" >}}
