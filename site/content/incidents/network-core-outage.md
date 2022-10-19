@@ -1,8 +1,11 @@
 +++
 title = "Network core outage"
 date = 2022-10-19T11:07:23.000Z
-severity = "major-outage"
+severity = "partial-outage"
 affectedsystems = ["web api", "mapserv"]
 resolved = false
 +++
 Core equipment for the State Network is having issues. Traffic to the Taylorsville State Office Building and within the TSOB are experiencing issue. Networking is aware of the issue and is working to resolve the problem.
+
+**Update** Network Operations have narrowed down the issue to hardware on our WAN core infrastructure. Some services are starting to come back online but many of the services that reside behind a specific firewall are still inaccessible. We are working to replace the faulty piece of hardware and continue restoring connections. Thanks again for your patience.
+{{< track "2022-10-19T13:23:00.000Z" >}}
