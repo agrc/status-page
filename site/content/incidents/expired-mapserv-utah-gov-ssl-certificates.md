@@ -11,6 +11,7 @@ Any app that is hosted on or makes requests to `mapserv.utah.gov` is affected in
 
 - any services hosted on `mapserv.utah.gov/arcgis/rest`
 - `addressediting.utah.gov`
+- `biobase.utah.gov`
 - `broadband.ugrc.utah.gov`
 - `deqspills.ugrc.utah.gov`
 - `enviro.deq.utah.gov`
