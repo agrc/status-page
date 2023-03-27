@@ -36,7 +36,7 @@ a:active {
   color: #202020;
 }
 .title a:hover,
-.title a:focus, {
+.title a:focus {
   text-decoration: none;
 }
 
@@ -130,6 +130,9 @@ a:active {
   text-transform: capitalize;
   width: 75%;
 }
+.incident-description > ul {
+    padding-left: 2rem;
+}
 
 @media (max-width: 725px) {
   .incident-date {
@@ -160,7 +163,7 @@ a:active {
 
 .flex-out {
   display: flex;
-  flex-direciton: row;
+  flex-direction: row;
   justify-content: space-between;
 }
 
