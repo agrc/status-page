@@ -25,4 +25,4 @@ Any app that is hosted on or makes requests to `mapserv.utah.gov` is affected in
 
 ## Update {{< track "2023-03-27T12:22:00.000Z" >}}
 
-Cloud hosting are still working with Google and VMWare support. They think they have identified the issue but don’t know if resolution is close or not yet.
+Cloud hosting are still working with Google and VMWare support. They think they have identified the issue but don’t know if a resolution is close or not yet.
