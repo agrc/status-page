@@ -20,3 +20,4 @@ Any app that is hosted on or makes requests to `mapserv.utah.gov` is affected in
 * `wq.deq.utah.gov`
 * any services hosted on `mapserv.utah.gov/arcgis/rest`
 * `wri.utah.gov`
+* `addressediting.utah.gov`
