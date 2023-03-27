@@ -22,6 +22,7 @@ Any app that is hosted on or makes requests to `mapserv.utah.gov` is affected in
 - `vista-map.ugrc.utah.gov`
 - `wq.deq.utah.gov`
 - `wri.utah.gov`
+- `sbilocate.ugrc.utah.gov`
 
 ## Update
 
