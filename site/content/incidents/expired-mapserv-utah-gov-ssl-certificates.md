@@ -3,7 +3,7 @@ title = "Expired mapserv.utah.gov SSL certificates"
 date = 2023-03-24T01:00:00.000Z
 severity = "major-outage"
 affectedsystems = ["mapserv"]
-resolved = false
+resolved = true
 +++
 The SSL certificate for mapserv.utah.gov has expired and the Cloud team is having issues replacing it.
 
