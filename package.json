@@ -4,9 +4,8 @@
   "description": "StatusKit is a template to build Status pages for your business",
   "main": "index.js",
   "scripts": {
-    "hugo": "gulp hugo",
-    "build": "gulp build",
-    "build-preview": "gulp buildPreview",
+    "build": "hugo --source site --gc --minify",
+    "build-preview": "hugo --source site --gc --minify --buildDrafts --buildFuture",
     "start": "gulp server",
     "lint": "eslint src gulpfile.babel.js",
     "new-incident": "gulp newIncident"
