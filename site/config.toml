@@ -1,6 +1,7 @@
 baseurl = "/"
 languageCode = "en-us"
 title = "UGRC System Status"
+theme = "statuskit"
 googleAnalytics = "UA-11849964-59"
 
 [permalinks]
@@ -19,3 +20,7 @@ systems = [
   "web api",
   "mapserv",
 ]
+
+[security]
+[security.funcs]
+getenv = ['^STATUSKIT_']
