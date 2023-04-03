@@ -1,5 +1,5 @@
 [build]
-command = "hugo --source site --gc --minify"
+command = "hugo --source site --gc --minify --destination ../public"
 publish = "public"
 
 [build.environment]
@@ -14,7 +14,7 @@ HUGO_ENABLEGITINFO = "true"
 HUGO_VERSION = "0.111.3"
 
 [context.deploy-preview]
-command = "hugo --source site --gc --minify --buildDrafts --buildFuture --baseUrl $DEPLOY_PRIME_URL"
+command = "hugo --source site --destination ../public --gc --minify --buildDrafts --buildFuture --baseUrl $DEPLOY_PRIME_URL"
 
 [template.environment]
 STATUSKIT_PAGE_TITLE = "title for the page"
