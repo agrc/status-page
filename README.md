@@ -24,7 +24,7 @@ Incidents are plain markdown files inside the `site/content/incidents` directory
 Adding incidents to your status page is as simple as adding a new document to the incidents collection.
 Create a new incident using npm:
 
-```
+```sh
 npm run new-incident
 ```
 
@@ -44,7 +44,6 @@ resolved = true
 +++
 ```
 
-
 ### Tracking activity
 
 When there is an update in your incident you can track activity by inserting a timestamp with the update. For example:
@@ -53,4 +52,4 @@ When there is an update in your incident you can track activity by inserting a t
 **Update**: We've identified the issue. {{< track "2016-11-22T14:34:00.000Z" >}}
 ```
 
-You can get the current date in a brower by running `new Date().toISOString();`
+You can get the current date in a browser by running `new Date().toISOString();`
