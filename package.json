@@ -13,32 +13,22 @@
   },
   "author": "",
   "license": "MIT",
-  "dependencies": {
-    "@babel/core": "^7.19.3",
-    "@babel/preset-env": "^7.19.4",
-    "@babel/register": "^7.18.9",
-    "babel-eslint": "^10.1.0",
-    "browser-sync": "^2.27.11",
-    "del": "^6.0.0",
-    "eslint": "^8.25.0",
-    "eslint-plugin-import": "^2.26.0",
-    "exports-loader": "^3.1.0",
-    "gulp": "^4.0.2",
-    "gulp-babel": "^8.0.0-beta.2",
-    "gulp-postcss": "^9.0.1",
-    "imports-loader": "^3.1.1",
-    "inquirer": "^8.2.2",
-    "lodash.kebabcase": "^4.1.1",
-    "postcss-import": "^14.1.0",
-    "postcss-loader": "^6.2.1",
-    "postcss-preset-env": "^7.8.2",
-    "tomlify-j0.4": "^3.0.0",
-    "tomljs": "^0.1.3"
-  },
   "optionalDependencies": {
     "fsevents": "^1.0.15"
   },
   "devDependencies": {
-    "postcss": "^8.4.18"
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "@babel/register": "^7.21.0",
+    "babel-eslint": "^10.1.0",
+    "browser-sync": "^2.29.1",
+    "del": "^6.0.0",
+    "eslint": "^8.37.0",
+    "eslint-plugin-import": "^2.27.5",
+    "gulp": "^4.0.2",
+    "inquirer": "^8.2.5",
+    "lodash.kebabcase": "^4.1.1",
+    "tomlify-j0.4": "^3.0.0",
+    "tomljs": "^0.1.3"
   }
 }
