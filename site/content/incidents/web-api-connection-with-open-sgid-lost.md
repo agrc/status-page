@@ -1,6 +1,6 @@
 +++
 title = "Web API connection with Open SGID lost"
-date = 2021-12-10T4:00:23.000Z
+date = 2021-12-10T04:00:23.000Z
 severity = "partial-outage"
 affectedsystems = ["web api"]
 resolved = true
