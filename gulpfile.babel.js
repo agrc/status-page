@@ -1,15 +1,11 @@
-import babel from "gulp-babel";
 import BrowserSync from "browser-sync";
 import cp from "child_process";
-import cssImport from "postcss-import";
-import cssnext from "postcss-preset-env";
 import del from "del";
 import fs from "fs";
 import gulp from "gulp";
 import inquirer from "inquirer";
 import kebabCase from "lodash.kebabcase";
 import path from "path";
-import postcss from "gulp-postcss";
 import toml from "tomljs";
 import tomlify from "tomlify-j0.4";
 
@@ -17,12 +13,12 @@ const browserSync = BrowserSync.create();
 const hugoBin = `hugo`;
 const defaultArgs = ["-s", "site", "-v", "-d", "../public"];
 
-function generateFrontMatter(frontMatter, answers) {
-  return `+++
+
+const generateFrontMatter = (frontMatter, answers) => `+++
 ${tomlify.toToml(frontMatter, null, 2)}
 +++
 ${answers.description}`;
-}
+
 
 const hugo = (done, options) => {
   cp.spawn(hugoBin, ["version"], {
@@ -30,7 +26,6 @@ const hugo = (done, options) => {
   });
 
   let args = options ? defaultArgs.concat(options) : defaultArgs;
-  args = args.concat(buildArgs);
 
   // cp needs to be in site directory
   cp.spawn(hugoBin, args, {
@@ -48,24 +43,12 @@ const hugo = (done, options) => {
   return done;
 };
 
-export const css = () => gulp.src("./src/css/**/*.css")
-  .pipe(postcss([cssnext(), cssImport({
-    from: "./src/css/main.css"
-  })]))
-  .pipe(gulp.dest("./dist/css"));
-
-export const js = () => gulp.src("./src/js/*.js")
-  .pipe(babel())
-  .pipe(gulp.dest("./dist/js"));
-
-export const server = gulp.series(gulp.parallel(css, js), hugo, () => {
+export const server = gulp.series(hugo, () => {
   browserSync.init({
     server: {
-      baseDir: "./dist"
+      baseDir: "./public"
     }
   });
-  gulp.watch("./src/js/**/*.js", js);
-  gulp.watch("./src/css/**/*.css", css);
   gulp.watch("./site/**/*", hugo);
 });
 
@@ -140,7 +123,7 @@ export const newIncident = (done) => {
       fs.writeFileSync(path, content);
 
       if (!answers.open) {
-        return;
+        return null;
       }
 
       let cmd = "xdg-open";
@@ -172,8 +155,8 @@ export const newIncident = (done) => {
   });
 };
 
-export const clean = (done) => del(["dist"], done);
-export const hugoPreview = (done) => hugo(done, ["--buildDrafts", "--buildFuture"]);
-export const build = gulp.series(clean, gulp.parallel(css, js), hugo);
-export const buildPreview = gulp.series(clean, gulp.parallel(css, js), hugoPreview);
+export const clean = (done) => del(["public"], done);
+export const hugoPreview = (done) => hugo(done, ["--watch", "--buildDrafts", "--buildFuture"]);
+export const build = gulp.series(clean, hugo);
+export const buildPreview = gulp.series(clean, hugoPreview);
 export default hugo;
