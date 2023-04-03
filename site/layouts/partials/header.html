@@ -8,12 +8,14 @@
 {{ $incidents := where .Site.RegularPages.ByDate.Reverse "Section" "incidents" }}
 {{ $active := where $incidents "Params.resolved" "!=" true }}
 {{ $major := where $active "Params.severity" "major-outage" }}
+{{ $css := resources.Get "css/main.css" -}}
+{{- $css = $css | minify | fingerprint -}}
 
 <html lang="{{.Site.LanguageCode}}">
 
 <head>
   <title>{{ $title }}</title>
-  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
   {{ if $major }}
   <link rel="icon" href="{{ absURL $favicons }}favicon-danger.ico">
   {{ else if $active }}
@@ -55,6 +57,7 @@
       height: 60px;
       margin: 7px 10px
     }
+
   </style>
 </head>
 
