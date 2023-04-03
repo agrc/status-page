@@ -6,13 +6,13 @@
 {{ partial "systems" (dict "content" . "incidents" $active) }}
 
 {{ with $active }}
-  <div class="section-title mute">Active Incidents</div>
-  {{ range $active }}
-    {{ partial "incident" . }}
-  {{ end }}
+<div class="section-title mute">Active Incidents</div>
+{{ range $active }}
+{{ partial "incident" . }}
+{{ end }}
 {{ else }}
-  {{ $latest := index $incidents 0 }}
-  {{ partial "all-clear" $latest }}
+{{ $latest := index $incidents 0 }}
+{{ partial "all-clear" $latest }}
 {{ end }}
 
 {{ $recents := first 3 (where $incidents "Params.resolved" "==" true) }}
@@ -20,7 +20,7 @@
 <div class="history">
   <div class="section-title">Past Incidents</div>
   {{ range $recents }}
-    {{ partial "incident" . }}
+  {{ partial "incident" . }}
   {{ end }}
   <a href="/incidents" class="see-more">See all incidents</a>
 </div>
@@ -28,4 +28,7 @@
 
 {{ partial "footer" . }}
 
-<script src="/app.js"></script>
+{{ $js := resources.Get "js/app.js" -}}
+{{- $js = $js | minify | fingerprint -}}
+
+<script src="{{ $js.RelPermalink }}"></script>
