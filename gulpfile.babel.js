@@ -14,22 +14,8 @@ import toml from "tomljs";
 import tomlify from "tomlify-j0.4";
 
 const browserSync = BrowserSync.create();
-const platform = getPlatform(process.platform);
-const hugoBin = `./bin/hugo_0.54_${platform}_amd64${platform === "windows" ? ".exe" : ""}`;
-const defaultArgs = ["-s", "site", "-v"];
-const buildArgs = ["-d", "../dist"];
-
-function getPlatform(platform) {
-  switch (platform) {
-    case "win32":
-    case "win64": {
-      return "windows";
-    }
-    default: {
-      return platform;
-    }
-  }
-}
+const hugoBin = `hugo`;
+const defaultArgs = ["-s", "site", "-v", "-d", "../public"];
 
 function generateFrontMatter(frontMatter, answers) {
   return `+++
