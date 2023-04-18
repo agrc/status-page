@@ -13,6 +13,17 @@ const browserSync = BrowserSync.create();
 const hugoBin = `hugo`;
 const defaultArgs = ["-s", "site", "-v", "-d", "../public"];
 
+const getPlatform = (platform) => {
+  switch (platform) {
+    case "win32":
+    case "win64": {
+      return "windows";
+    }
+    default: {
+      return platform;
+    }
+  }
+};
 
 const generateFrontMatter = (frontMatter, answers) => `+++
 ${tomlify.toToml(frontMatter, null, 2)}
@@ -105,12 +116,12 @@ export const newIncident = (done) => {
     hugo.stdout.on("data", (data) => {
       const message = data.toString();
 
-      if (message.indexOf(" created") === -1) {
+      const match = message.match(/(Content) "(?<path>.*)" (?<status>created)/);
+      if (match.length !== 4 && match.groups.status !== "created") {
         return;
       }
 
-      const path = message.split(" ")[0];
-
+      const path = match.groups.path;
       const incident = fs.readFileSync(path).toString();
       const frontMatter = toml(incident);
 
@@ -127,7 +138,7 @@ export const newIncident = (done) => {
       }
 
       let cmd = "xdg-open";
-      switch (platform) {
+      switch (getPlatform(process.platform)) {
         case "darwin": {
           cmd = "open";
           break;
@@ -142,7 +153,10 @@ export const newIncident = (done) => {
         }
       }
 
-      cp.exec(`${cmd} ${path}`);
+      const command = `${cmd} ${path}`;
+      console.log(`Opening ${path} with ${cmd}...`)
+
+       cp.exec(command);
     });
 
     hugo.on("close", (code) => {
