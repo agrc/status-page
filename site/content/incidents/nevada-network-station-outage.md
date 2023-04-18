@@ -27,8 +27,15 @@ affectedsystems = ["gps network"]
 #
 resolved = false
 +++
-Five stations are down in the Reno, Nevada area. Most users will have to use the MS_ or single base connections. A resolution time is unknown because of the complexity of the station locations. We will post updates as they become available.
+Five stations are down in the Reno, Nevada area which does not allow for a network solution.
+
+- Incline Village
+- Reno
+- Yerington
+- Geriach
+
+Most users will have to use the MS_ or single base connections. A resolution time is unknown. We will post updates as they become available.
 
 ## Update
 
-The Fernley station is back online. This is still below the threshold for a network solution. {{< track "2023-04-18T13:30:00" >}}
+The Fernley station is back online. This is still below the threshold for a network solution. Yerington received a new part that requires an install before coming back online. {{< track "2023-04-18T13:30:00" >}}
