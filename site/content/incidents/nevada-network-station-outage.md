@@ -20,7 +20,7 @@ severity = "partial-outage"
 # Example:
 # affectedsystems = ["discover", "SDE", "license manager", "gis.utah.gov", "web api", "mapserv"]
 #
-affectedsystems = ["vrs gps network"]
+affectedsystems = ["gps network"]
 
 # resolved: marks an incident as resolved.
 # It can be either true or false.
