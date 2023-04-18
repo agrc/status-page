@@ -31,4 +31,4 @@ Five stations are down in the Reno, Nevada area. Most users will have to use the
 
 ## Update
 
-The Fernley station is back online. This is still below the threshold for a network solution. {{< track "2023-04-18T09:02:29" >}}
+The Fernley station is back online. This is still below the threshold for a network solution. {{< track "2023-04-18T13:30:00" >}}
