@@ -27,8 +27,8 @@ affectedsystems = ["gps network"]
 #
 resolved = false
 +++
-Five stations are
-down in the Reno, Nevada area. Most users will have to use
-the MS_ or single base connections. A resolution time is
-unknown because of the complexity of the station locations.
-We will post updates as they become available.
+Five stations are down in the Reno, Nevada area. Most users will have to use the MS_ or single base connections. A resolution time is unknown because of the complexity of the station locations. We will post updates as they become available.
+
+## Update
+
+The Fernley station is back online. This is still below the threshold for a network solution. {{< track "2023-04-18T09:02:29" >}}
