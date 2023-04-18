@@ -33,6 +33,7 @@ Five stations are down in the Reno, Nevada area which does not allow for a netwo
 - Reno
 - Yerington
 - Geriach
+- Fernley
 
 Most users will have to use the MS_ or single base connections. A resolution time is unknown. We will post updates as they become available.
 
