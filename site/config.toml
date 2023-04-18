@@ -19,6 +19,7 @@ systems = [
   "gis.utah.gov",
   "web api",
   "mapserv",
+  "vrs gps network",
 ]
 
 [security]
