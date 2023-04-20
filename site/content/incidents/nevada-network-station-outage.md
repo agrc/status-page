@@ -40,3 +40,7 @@ Most users will have to use the MS_ or single base connections. A resolution tim
 ## Update
 
 The Fernley station is back online. This is still below the threshold for a network solution. Yerington received a new part that requires an install before coming back online. {{< track "2023-04-18T13:30:00" >}}
+
+## Update
+
+The stations in the Reno area are back online. The Yerington (YER1) station is going through some setup and it will be back online shortly. That leaves the Geriach (GERL) station which is pretty far north and will only have an effect for those who work in far north areas. {{< track "2023-04-20T09:20:00" >}}
