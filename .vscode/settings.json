@@ -7,9 +7,13 @@
     "deqspills",
     "enviro",
     "gulpfile",
+    "kebabcase",
     "mapserv",
+    "packagejson",
     "statuskit",
     "Taylorsville",
+    "tomlify",
+    "tomljs",
     "TSOB",
     "UDOT",
     "ugrc"
