@@ -2,7 +2,7 @@ baseurl = "/"
 languageCode = "en-us"
 title = "UGRC System Status"
 theme = "statuskit"
-googleAnalytics = "UA-11849964-59"
+googleAnalytics = "G-DG8K6WJ0EE"
 
 [permalinks]
 incidents = "/incidents/:year/:month/:day/:slug/"
