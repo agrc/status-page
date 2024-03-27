@@ -1,9 +1,0 @@
-{
-  "recommendations": [
-    "tamasfe.even-better-toml",
-    "esbenp.prettier-vscode",
-    "editorconfig.editorconfig",
-    "bungcip.better-toml",
-    "davidanson.vscode-markdownlint"
-  ]
-}

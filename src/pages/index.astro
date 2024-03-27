@@ -1,0 +1,63 @@
+---
+import { System } from '@models/types';
+
+import Layout from '@layouts/FullWidth.astro';
+
+import CardWithDate from '@components/cards/CardWithDate.astro';
+
+import ButtonLink from '@components/ButtonLink.astro';
+import CardForStatus from '@components/status/CardForStatus.astro';
+import { getIncidents, getIncidentsOf, type DecoratedIncidentEntry } from '@utils/collections';
+
+const pastIncidents = (await getIncidents(true)).slice(0, 3);
+const openIncidents = await getIncidentsOf('unresolved');
+
+if (!openIncidents) {
+  console.log(pastIncidents[0]);
+}
+---
+
+<Layout bannerHeading="UGRC system status" pageTitle="UGRC - System status">
+  <section class="w-full bg-zinc-100 pb-16 pt-10 dark:bg-zinc-900 dark:text-zinc-50">
+    <div class="mx-auto px-8 pb-6 text-center md:max-w-screen-lg">
+      <h1>UGRC systems</h1>
+      <div class="mt-10 grid justify-items-center gap-6 lg:grid-cols-2">
+        {
+          Object.values(System).map((system) => (
+            <CardForStatus
+              system={system}
+              filteredSystems={openIncidents.filter((filter) => filter.name.toLowerCase() === system.toLowerCase())}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+  <section class="w-full bg-zinc-900 pb-16 pt-10 dark:bg-primary-950 dark:text-zinc-300">
+    <div class="mx-auto grid grow grid-cols-1 gap-12 md:max-w-screen-lg lg:px-8 2xl:px-0">
+      <div class="flex flex-1 flex-col justify-center gap-6 self-center">
+        <div class="my-3 max-w-xl self-center">
+          <h2 class="text-center text-zinc-50">Past incidents</h2>
+          <div class="mt-4 flex w-full max-w-4xl flex-1 flex-col gap-3">
+            {
+              pastIncidents.map((incident: DecoratedIncidentEntry) => (
+                <CardWithDate
+                  title={incident.data.title}
+                  snippet={incident.data.snippet}
+                  date={incident.data.date}
+                  slug={incident.slug}
+                  includeYear
+                />
+              ))
+            }
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="max-w-fit">
+          <ButtonLink href="/incident">View all incidents</ButtonLink>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,35 @@
+---
+import FormattedDate from '@components/FormattedDate.astro';
+
+import RightArrow from '@components/RightArrow.astro';
+
+interface Props {
+  snippet: string;
+  title: string;
+  slug: string;
+  date: Date;
+  includeYear?: boolean;
+}
+
+const { title, snippet, slug, date, includeYear } = Astro.props;
+---
+
+<div class="rounded-lg border border-zinc-400 bg-white dark:border dark:border-white/20 dark:bg-zinc-900/70">
+  <a
+    href={`/incident/${slug}/`}
+    class="custom-style flex flex-1 divide-x-2 divide-zinc-300/60 rounded-lg p-4 focus:outline-none focus:ring-4 focus:ring-accent"
+  >
+    <div class="pr-1">
+      <FormattedDate date={date} style={includeYear ? 'short-with-year' : 'short'} />
+    </div>
+    <div class="flex min-w-0 flex-1 pl-6">
+      <div class="flex min-w-0 flex-1 flex-col justify-around">
+        <p class="line-clamp-1 font-semibold text-primary dark:text-zinc-200">
+          {title}
+        </p>
+        <p class="line-clamp-2 text-ellipsis text-zinc-600 dark:text-zinc-300">{snippet}</p>
+      </div>
+      <div class="hidden self-center text-4xl text-primary sm:block dark:text-zinc-300"><RightArrow /></div>
+    </div>
+  </a>
+</div>

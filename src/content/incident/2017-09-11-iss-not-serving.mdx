@@ -1,0 +1,16 @@
+---
+title: mapserv.utah.gov not serving static files
+date: 2017-09-11T14:00:23.000Z
+severity: partial-outage
+affectedSystems:
+  - mapserv
+resolved: true
+---
+
+import Update from '@components/status/Update.astro';
+
+The mapserv web server is not serving static content items (html, css, images, javascript) as well as a variety of other domains. This is caused by an outage with our hosting companies security software (OpenAM). They are aware of the issue and is working to resolve it.
+
+<Update date="2017-09-11T09:40:00-06:00">
+  OpenAM (the cause of the outage) has come back online and everything is operating normally.
+</Update>
