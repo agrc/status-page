@@ -1,0 +1,16 @@
+---
+title: Geocoding Locators locked from starting
+date: 2018-02-01T04:02:33.000Z
+severity: partial-outage
+affectedSystems:
+  - ugrc api
+resolved: true
+---
+
+import Update from '@components/status/Update.astro';
+
+Forklift updated the geocoding api locators and they did not restart properly. All geocoding is returning not found.
+
+<Update date="2018-02-01T09:28:33.000Z">
+  Restarting the server service removed the lock on the locators and they started up normally.
+</Update>

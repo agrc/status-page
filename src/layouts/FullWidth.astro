@@ -1,0 +1,17 @@
+---
+import Layout from '@layouts/Chrome.astro';
+
+const props = Astro.props;
+---
+
+<Layout {...props}>
+  <main id="main" class="w-full self-center text-zinc-700 dark:bg-primary-950">
+    <section class="flex flex-1 flex-col">
+      <slot name="crumbs" />
+      <div class="px-6">
+        <slot name="quick-links" />
+      </div>
+      <slot />
+    </section>
+  </main>
+</Layout>

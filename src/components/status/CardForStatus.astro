@@ -1,0 +1,101 @@
+---
+import type { FilteredSystem } from '@utils/collections';
+
+interface Props {
+  system: string;
+  filteredSystems?: FilteredSystem[];
+}
+
+const { system, filteredSystems } = Astro.props;
+
+let good = false;
+if (filteredSystems?.length !== 1) {
+  good = true;
+} else {
+  good = (filteredSystems[0]?.incidents ?? []).length === 0;
+}
+
+let severity = { 'under-maintenance': 0, 'degraded-performance': 1, 'partial-outage': 2, 'major-outage': 3 };
+let highestSeverity = -1;
+if (!good && filteredSystems) {
+  highestSeverity = filteredSystems[0].incidents.map((item) => severity[item.severity] ?? -1).sort()[0];
+}
+
+let url;
+switch (system.toLowerCase()) {
+  case 'ugrc api':
+    url = 'https://gis.utah.gov/products/api';
+    break;
+  case 'turn gps':
+    url = 'https://gis.utah.gov/products/turn';
+    break;
+  case 'our website':
+    url = 'https://gis.utah.gov/';
+    break;
+  case 'discover base maps and imagery':
+    url = 'https://gis.utah.gov/products/discover';
+    break;
+  case 'open sgid':
+    url = 'https://gis.utah.gov/documentation/sgid/';
+    break;
+  case 'sgid on arcgis':
+    url = 'https://gis.utah.gov/documentation/sgid/';
+    break;
+  case 'license manager':
+    url = 'https://gis.utah.gov/products/sgid';
+    break;
+  case 'mapserv':
+    url = 'https://atlas.utah.gov';
+    break;
+  default:
+    url = 'https://gis.utah.gov';
+}
+---
+
+<a
+  href={good ? url : `/incident/${filteredSystems[0].incidents[0].slug}`}
+  class="custom-style flex min-h-28 w-96 flex-1 grow rounded-lg border border-zinc-400 bg-white px-6 py-3 text-primary shadow focus:border-transparent focus:outline-none focus:ring-4 focus:ring-accent dark:border-white/20 dark:bg-primary dark:text-zinc-50"
+>
+  <div class="flex grow flex-col">
+    <p class="text-sm font-bold uppercase md:text-base">{system}</p>
+    <p class="grow content-center self-center pr-2 text-sm text-zinc-700">
+      {
+        good ? (
+          <span class="text-emerald-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-14"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+              />
+            </svg>
+          </span>
+        ) : (
+          <span class="text-rose-500">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="size-14"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+              />
+            </svg>
+          </span>
+        )
+      }
+    </p>
+  </div>
+</a>

@@ -1,0 +1,22 @@
+---
+type Props = {
+  date: Date;
+};
+
+const { date } = Astro.props;
+const updated = new Date(date);
+const id = updated.toISOString().replaceAll(':', '-').replaceAll('.', '-');
+---
+
+<p>
+  <span class="font-bold text-primary dark:text-accent">
+    <time id={`time-${id}`} datetime={updated}>{updated}</time>
+  </span>
+</p>
+<div>
+  <slot />
+</div>
+<script define:vars={{ id }}>
+  const time = document.querySelector(`#time-${id}`);
+  time.textContent = new Date(time.getAttribute('datetime')).toLocaleString();
+</script>

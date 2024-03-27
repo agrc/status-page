@@ -1,0 +1,31 @@
+---
+import Layout from '@layouts/Incidents.astro';
+
+import type { Page } from 'astro';
+
+import BreadCrumbs from '@components/BreadCrumbs.astro';
+import Pagination from '@components/Pagination.astro';
+
+import CardForIncident from '@components/cards/CardForIncident.astro';
+
+import { getIncidents, type DecoratedIncidentEntry } from '@utils/collections';
+
+export async function getStaticPaths({ paginate }: { paginate: any }) {
+  const posts = await getIncidents(true);
+
+  return paginate(posts, { pageSize: 9 });
+}
+
+const { page } = Astro.props as { page: Page<DecoratedIncidentEntry> };
+const pageDescription = 'A collection of UGRC prior incidents.';
+---
+
+<Layout pageTitle="Incidents for all systems" category="All" pageDescription={pageDescription}>
+  <BreadCrumbs path={Astro.url.pathname} slot="crumbs" />
+  <Pagination page={page} class="my-5" baseHref="incident" slot="pagination" />
+  {
+    page.data.map((post) => (
+      <CardForIncident title={post.data.title} date={post.data.date} slug={post.slug} snippet={post.data.snippet} />
+    ))
+  }
+</Layout>

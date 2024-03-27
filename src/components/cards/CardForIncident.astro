@@ -1,0 +1,35 @@
+---
+import { getDateParts } from '@utils/page';
+
+interface Props {
+  date: Date;
+  snippet: string;
+  slug: string;
+  title: string;
+}
+
+const { date, snippet, slug, title } = Astro.props;
+const { year, month, day } = getDateParts(date);
+---
+
+<div
+  class="flex max-w-sm flex-col overflow-hidden rounded-lg border border-black/20 bg-white shadow has-[:focus]:outline-none has-[:focus]:ring-4 has-[:focus]:ring-accent dark:bg-zinc-900/70"
+>
+  <div class="bg-primary px-4 py-1 text-center text-sm font-black uppercase text-zinc-50 dark:bg-secondary">
+    <span class="line-clamp-1 pl-2">{title}</span>
+  </div>
+  <a href={`/incident/${slug}/`} class="custom-style flex flex-1 flex-col divide-y divide-black/20 focus:outline-none">
+    <div class="flex min-w-0 flex-1 p-4 pb-2 pt-2">
+      <div class="flex min-w-0 flex-1 flex-col">
+        <p class="line-clamp-4 text-ellipsis text-zinc-600 dark:text-zinc-300">{snippet}</p>
+      </div>
+    </div>
+    <time
+      datetime={date.toISOString()}
+      class="flex items-center justify-between bg-secondary-200 px-4 py-1 text-zinc-50 dark:bg-secondary dark:text-zinc-300"
+    >
+      <span class="font-black">{year}</span>
+      <span class="text-xs uppercase">{month} {day}</span></time
+    >
+  </a>
+</div>

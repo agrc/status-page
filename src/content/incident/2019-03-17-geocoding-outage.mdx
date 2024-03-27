@@ -1,0 +1,22 @@
+---
+title: Geocoding outage
+date: 2019-03-17T08:45:59.000Z
+severity: major-outage
+affectedSystems:
+  - ugrc api
+resolved: true
+---
+
+import Update from '@components/status/Update.astro';
+
+Windows updates were installed and the system was rebooted at 8:45AM. ArcGIS Server did not recover.
+
+<Update date="2019-03-17T11:41:00.000Z">
+  Geocoding has been restored at 10:00AM but searching continued to be down.
+</Update>
+
+<Update date="2019-03-17T15:18:00.000Z">
+  Capitol hosting restored the machine from a backup and all systems are back online.
+</Update>
+
+All geocoding and searching that was done during this time frame should be reprocessed.
