@@ -9,22 +9,20 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check --minimumSeverity=warning",
+    "ts-check": "astro check",
     "format": "prettier \"src/**/*.{astro,js,jsx,ts,json,mjs,md,mdx}\" --write"
   },
   "dependencies": {
     "@astrojs/check": "^0.5.10",
-    "@astrojs/mdx": "^2.2.1",
-    "@astrojs/react": "^3.1.0",
+    "@astrojs/mdx": "^2.3.0",
+    "@astrojs/react": "^3.3.0",
     "@astrojs/tailwind": "^5.1.0",
     "@heroicons/react": "^2.1.3",
     "@radix-ui/react-collapsible": "^1.0.3",
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@radix-ui/react-popover": "^1.0.7",
-    "@types/react": "^18.2.72",
-    "@types/react-dom": "^18.2.22",
-    "astro": "^4.5.9",
-    "child_process": "^1.0.2",
+    "astro": "^4.6.1",
     "clsx": "^2.1.0",
     "gray-matter": "^4.0.3",
     "html-to-text": "^9.0.5",
@@ -36,13 +34,13 @@
     "micromark-extension-mdxjs": "^3.0.0",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
-    "prettier-plugin-tailwindcss": "^0.5.12",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.2.2",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.3",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
     "unist-util-remove": "^4.0.0",
     "yaml": "^2.4.1"
   },
@@ -53,5 +51,13 @@
       "prettier-plugin-astro",
       "prettier-plugin-tailwindcss"
     ]
+  },
+  "devDependencies": {
+    "@types/html-to-text": "^9.0.4",
+    "@types/lodash.capitalize": "^4.2.9",
+    "@types/lodash.startcase": "^4.4.9",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.79",
+    "@types/react-dom": "^18.2.25"
   }
 }
