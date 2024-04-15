@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { execSync } from 'child_process';
+import { execSync } from 'node:child_process';
 import { convert } from 'html-to-text';
 import { fromMarkdown } from 'mdast-util-from-markdown';
 import { mdxFromMarkdown } from 'mdast-util-mdx';
@@ -12,7 +12,7 @@ const getLastModifiedTime = (path: string) => {
     return new Date();
   }
 
-  const updated = execSync(`git log -1 --pretty="format:%cI" ./src/content/blog/${path}`).toString();
+  const updated = execSync(`git log -1 --pretty="format:%cI" ./src/content/incident/${path}`).toString();
 
   return !updated ? new Date() : new Date(updated);
 };
@@ -23,6 +23,7 @@ export type DecoratedIncidentEntry = IncidentEntry & {
   data: IncidentEntry['data'] & {
     snippet: string;
     lastUpdated: Date;
+    severity: 'under-maintenance' | 'degraded-performance' | 'partial-outage' | 'major-outage';
   };
 };
 
@@ -47,7 +48,6 @@ export async function getIncidents(all = false): Promise<DecoratedIncidentEntry[
     .filter((incident) => all || incident.data.resolved === false)
     .sort((b, a) => a.data.date.valueOf() - b.data.date.valueOf())
     .map((incident): DecoratedIncidentEntry => {
-
       const documentType = incident.id.split('.').pop() as 'md' | 'mdx';
 
       return {
@@ -56,6 +56,7 @@ export async function getIncidents(all = false): Promise<DecoratedIncidentEntry[
           ...incident.data,
           snippet: getSnippetFromMarkdown(incident.body, documentType),
           lastUpdated: getLastModifiedTime(incident.id),
+          severity: incident.data.severity,
         },
       };
     });
@@ -79,26 +80,27 @@ export type FilteredSystem = {
 export async function getIncidentsOf(filterType: 'unresolved'): Promise<FilteredSystem[]> {
   const incidents = await getIncidents();
 
-  const organizedIncidents = incidents.reduce((filteredIncidents: Record<string, FilteredSystem>, incident: DecoratedIncidentEntry) => {
-    function addValue(incident: DecoratedIncidentEntry) {
-      const affectedSystemSlugs = incident.data.affectedSystems.map(slugify);
+  const organizedIncidents = incidents.reduce(
+    (filteredIncidents: Record<string, FilteredSystem>, incident: DecoratedIncidentEntry) => {
+      function addValue(incident: DecoratedIncidentEntry) {
+        for (const system of incident.data.affectedSystems) {
+          const slug = slugify(system);
+          if (!filteredIncidents[slug]) {
+            filteredIncidents[slug] = { slug, name: system, incidents: [] };
+          }
 
-      for (const system of incident.data.affectedSystems) {
-        const slug = slugify(system);
-        if (!filteredIncidents[slug]) {
-          filteredIncidents[slug] = { slug, name: system, incidents: [] };
+          filteredIncidents[slug].incidents.push(incident);
         }
-
-        filteredIncidents[slug].incidents.push(incident);
       }
-    }
 
-    if (filterType === 'unresolved') {
-      addValue(incident);
-    }
+      if (filterType === 'unresolved') {
+        addValue(incident);
+      }
 
-    return filteredIncidents;
-  }, {});
+      return filteredIncidents;
+    },
+    {},
+  );
 
   return Object.keys(organizedIncidents)
     .sort()

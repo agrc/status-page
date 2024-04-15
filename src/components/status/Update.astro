@@ -10,13 +10,13 @@ const id = updated.toISOString().replaceAll(':', '-').replaceAll('.', '-');
 
 <p>
   <span class="font-bold text-primary dark:text-accent">
-    <time id={`time-${id}`} datetime={updated}>{updated}</time>
+    <time id={`time-${id}`} datetime={updated.toISOString()}>{updated}</time>
   </span>
 </p>
 <div>
   <slot />
 </div>
-<script define:vars={{ id }}>
+<script is:inline define:vars={{ id }}>
   const time = document.querySelector(`#time-${id}`);
   time.textContent = new Date(time.getAttribute('datetime')).toLocaleString();
 </script>
