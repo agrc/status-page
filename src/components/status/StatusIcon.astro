@@ -1,0 +1,36 @@
+---
+import MaintenanceIcon from '@components/status/MaintenanceIcon.astro';
+import CautionIcon from '@components/status/CautionIcon.astro';
+import MajorIcon from '@components/status/MajorIcon.astro';
+
+const { severity } = Astro.props;
+---
+
+{
+  severity === 0 && (
+    <div class="flex self-center text-sky-500">
+      <MaintenanceIcon />
+    </div>
+  )
+}
+{
+  severity === 1 && (
+    <span class="text-yellow-500">
+      <CautionIcon />
+    </span>
+  )
+}
+{
+  severity === 2 && (
+    <span class="text-orange-500">
+      <CautionIcon />
+    </span>
+  )
+}
+{
+  severity === 3 && (
+    <span class="text-rose-500">
+      <MajorIcon />
+    </span>
+  )
+}
