@@ -11,7 +11,7 @@ interface Props {
 
 const { path, class: className, gradients = 'from-white dark:from-primary-950' } = Astro.props;
 
-const capitalizeAcronyms = (str: string) => {
+const capitalizeAcronyms = (str: any) => {
   const acronyms = ['TURN', 'SGID', 'UGRC', 'API', 'GIS', 'GISAC'];
   let words = str.split('-');
 
