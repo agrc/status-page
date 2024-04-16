@@ -8,13 +8,6 @@ jobs:
   open-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: 🔍 Check issue type
-        run: |
-          if [[ "${{ github.event.issue.title }}" != "️🔥 New issue" ]]; then
-            echo "Issue title does not start with '️🔥 New issue', skipping"
-            exit 86
-          fi
-
       - name: 🔬 Check actor
         uses: tspascoal/get-user-teams-membership@v3
         id: checkUserMember

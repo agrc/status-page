@@ -1,7 +1,6 @@
 import fs from 'node:fs';
 import { Octokit } from '@octokit/core';
 import matter from 'gray-matter';
-import startCase from 'lodash.startcase';
 
 if (process.env.NODE_ENV !== 'test') {
   const issueNumber = process.argv[2];
@@ -17,6 +16,11 @@ if (process.env.NODE_ENV !== 'test') {
     repo: 'status-page',
     issue_number: issueNumber,
   });
+
+  if (!issue.data.body.includes('<!-- bot = {"type":"new-incident"} -->')) {
+    console.debug('This issue does not contain the correct metadata');
+    process.exit(0);
+  }
 
   const incident = getDataFromIssue(issue.data.body);
 
