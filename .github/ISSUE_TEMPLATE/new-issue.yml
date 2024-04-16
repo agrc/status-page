@@ -60,6 +60,7 @@ body:
         - degraded-performance
         - partial-outage
         - major-outage
+      default: 3
     validations:
       required: true
   - type: markdown
