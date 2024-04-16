@@ -1,0 +1,57 @@
+name: Issue opened (new incident)
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  open-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔍 Check issue type
+        run: |
+          if [[ "${{ github.event.issue.title }}" != "️🔥 New issue" ]]; then
+            echo "Issue title does not start with '️🔥 New issue', skipping"
+            exit 86
+          fi
+
+      - name: 🔬 Check actor
+        uses: tspascoal/get-user-teams-membership@v3
+        id: checkUserMember
+        with:
+          username: ${{ github.actor }}
+          team: committers
+          GITHUB_TOKEN: ${{ secrets.ORG_READ_PAT }}
+
+      - name: 🛑 Stop if not member
+        if: ${{ steps.checkUserMember.outputs.isTeamMember == false }}
+        run: |
+          echo "You cannot run this job."
+          exit 86
+
+      - name: ⬇️ Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: ⎔ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+          cache: npm
+
+      - name: 📦 Install script dependencies
+        working-directory: scripts
+        run: npm install
+
+      - name: 📝 Create new incident
+        working-directory: scripts
+        run: node new-incident.js ${{ github.event.issue.number }}
+
+      - name: 📌 Create pull request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'feat: create new incident post'
+          title: 'feat: create new incident post'
+          body: 'This PR was automatically created by the "Issue opened (new incident)" workflow.'
+          branch: feat/new-incident-${{ github.event.issue.number }}
+          draft: true
