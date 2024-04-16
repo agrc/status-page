@@ -1,0 +1,32 @@
+{
+  "name": "@ugrc/status-page-scripts",
+  "version": "1.0.0",
+  "description": "scripts to create new incidents",
+  "type": "module",
+  "main": "new-incident.js",
+  "scripts": {
+    "test": "NODE_ENV=test node --test --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agrc/status-page.git"
+  },
+  "keywords": [
+    "status-page"
+  ],
+  "author": "UGRC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/agrc/status-page/issues"
+  },
+  "homepage": "https://github.com/agrc/status-page#readme",
+  "dependencies": {
+    "@octokit/core": "^6.1.2",
+    "gray-matter": "^4.0.3",
+    "lodash.startcase": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/lodash.startcase": "^4.4.9",
+    "mock-fs": "^5.2.0"
+  }
+}
