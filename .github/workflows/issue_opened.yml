@@ -9,6 +9,16 @@ jobs:
     name: Open PR for new incident
     runs-on: ubuntu-latest
     steps:
+      - name: ✅ Update status
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.reactions.createForIssueComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: context.payload.comment.id,
+              content: ':eyes:'
+            });
       - name: 🔬 Check actor
         uses: tspascoal/get-user-teams-membership@v3
         id: checkUserMember
@@ -49,3 +59,14 @@ jobs:
           body: 'This PR was automatically created by the "Issue opened (new incident)" workflow.'
           branch: feat/new-incident-${{ github.event.issue.number }}
           draft: true
+
+      - name: ✅ Check comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.reactions.createForIssueComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: context.payload.comment.id,
+              content: ':rocket:'
+            });
