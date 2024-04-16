@@ -3,6 +3,32 @@ import { Octokit } from '@octokit/rest';
 import matter from 'gray-matter';
 import capitalize from 'lodash.capitalize';
 
+export const getDataFromIssue = (body) => {
+  const parts = body.split('### ');
+
+  return {
+    title: parts[1].substring(parts[1].indexOf('\n') + 1).trim(),
+    description: parts[2].substring(parts[2].indexOf('\n') + 1).trim(),
+    systems: parts[3]
+      .substring(parts[3].indexOf('\n') + 1)
+      .trim()
+      .split(', '),
+    severity: parts[4].substring(parts[4].indexOf('\n') + 1).trim(),
+  };
+};
+
+export const createNewIncidentPost = (filePath, incident, date) => {
+  const frontmatter = matter.stringify(incident.description, {
+    title: capitalize(incident.title),
+    date,
+    severity: incident.severity,
+    affectedSystems: incident.systems,
+    resolved: false,
+  });
+
+  fs.writeFileSync(filePath, frontmatter);
+};
+
 if (process.env.NODE_ENV !== 'test') {
   const issueNumber = process.argv[2];
 
@@ -33,29 +59,3 @@ if (process.env.NODE_ENV !== 'test') {
 
   createNewIncidentPost(filePath, incident, date);
 }
-
-export const getDataFromIssue = (body) => {
-  const parts = body.split('### ');
-
-  return {
-    title: parts[1].substring(parts[1].indexOf('\n') + 1).trim(),
-    description: parts[2].substring(parts[2].indexOf('\n') + 1).trim(),
-    systems: parts[3]
-      .substring(parts[3].indexOf('\n') + 1)
-      .trim()
-      .split(', '),
-    severity: parts[4].substring(parts[4].indexOf('\n') + 1).trim(),
-  };
-};
-
-export const createNewIncidentPost = (filePath, incident, date) => {
-  const frontmatter = matter.stringify(incident.description, {
-    title: capitalize(incident.title),
-    date,
-    severity: incident.severity,
-    affectedSystems: incident.systems,
-    resolved: false,
-  });
-
-  fs.writeFileSync(filePath, frontmatter);
-};
