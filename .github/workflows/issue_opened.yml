@@ -13,10 +13,10 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            github.rest.reactions.createForIssueComment({
+            github.rest.reactions.createForIssue({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              comment_id: context.payload.comment.id,
+              issue_number: context.payload.issue.number,
               content: ':eyes:'
             });
       - name: 🔬 Check actor
@@ -64,9 +64,9 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            github.rest.reactions.createForIssueComment({
+            github.rest.reactions.createForIssue({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              comment_id: context.payload.comment.id,
+              issue_number: context.payload.issue.number,
               content: ':rocket:'
             });
