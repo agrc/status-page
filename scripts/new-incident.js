@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import { Octokit } from '@octokit/core';
 import matter from 'gray-matter';
+import capitalize from 'lodash.capitalize';
 
 if (process.env.NODE_ENV !== 'test') {
   const issueNumber = process.argv[2];
@@ -49,7 +50,7 @@ export const getDataFromIssue = (body) => {
 
 export const createNewIncidentPost = (filePath, incident, date) => {
   const frontmatter = matter.stringify(incident.description, {
-    title: startCase(incident.title),
+    title: capitalize(incident.title),
     date,
     severity: incident.severity,
     affectedSystems: incident.systems,

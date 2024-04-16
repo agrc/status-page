@@ -23,10 +23,9 @@
   "dependencies": {
     "@octokit/core": "^6.1.2",
     "gray-matter": "^4.0.3",
-    "lodash.startcase": "^4.4.0"
+    "lodash.capitalize": "^4.2.1"
   },
   "devDependencies": {
-    "@types/lodash.startcase": "^4.4.9",
     "mock-fs": "^5.2.0"
   }
 }
