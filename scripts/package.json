@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/agrc/status-page#readme",
   "dependencies": {
-    "@octokit/core": "^6.1.2",
+    "@octokit/rest": "^20.1.0",
     "gray-matter": "^4.0.3",
     "lodash.capitalize": "^4.2.1"
   },

@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { Octokit } from '@octokit/core';
+import { Octokit } from '@octokit/rest';
 import matter from 'gray-matter';
 import capitalize from 'lodash.capitalize';
 
