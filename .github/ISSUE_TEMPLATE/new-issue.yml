@@ -23,7 +23,7 @@ body:
       placeholder: e.g. Network outage
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: description
     attributes:
       label: Incident description
