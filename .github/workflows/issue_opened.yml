@@ -6,6 +6,7 @@ on:
 
 jobs:
   open-pr:
+    name: Open PR for new incident
     runs-on: ubuntu-latest
     steps:
       - name: 🔬 Check actor
