@@ -1,0 +1,76 @@
+name: ️🔥 New issue
+description: Request the addition of a new blog post.
+title: 🔥 New issue
+labels: ['issue']
+assignees:
+  - steveoh
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For UGRC staff, when you are aware of a system issue, please fill out the following form.
+        After submitting this issue, GitHub will create:
+
+        1. a new markdown file in the `/src/content/incident` directory with the correct date and title you provide,
+
+        Find your file in the new branch and explain the situation.
+        When you're ready to publish, create a pull request.
+  - type: input
+    id: name
+    attributes:
+      label: Issue title
+      description: What is the title of the issue? This will end up in the url so keep it short and to the point. This should be greater than 15 characters but less than 71 are preferred.
+      placeholder: e.g. Network outage
+    validations:
+      required: true
+  - type: input
+    id: description
+    attributes:
+      label: Incident description
+      description: Describe the incident in detail and any resolution time frame that you may be aware of.
+      placeholder: e.g. The TURN GPS network is having intermittent issues. We are meeting with Trimble to try to find a resolution.
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: Affected systems
+      multiple: true
+      description: What systems are having trouble?
+      options:
+        - ugrc api
+        - turn gps
+        - our website
+        - discover base maps and imagery
+        - open sgid
+        - sgid on arcgis
+        - license manager
+        - mapserv
+      default: 0
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Incident Severity
+      multiple: false
+      description: Please select the severity of the incident.
+      options:
+        - under-maintenance
+        - degraded-performance
+        - partial-outage
+        - major-outage
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        > [!Tip]
+        > 🙈🙈🙈 Please ignore everything below this line.
+  - type: input
+    id: type
+    attributes:
+      label: <!---->
+      value: <!-- bot = {"type":"new-incident"} -->
+    validations:
+      required: true
