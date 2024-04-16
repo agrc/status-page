@@ -1,15 +1,15 @@
-name: ️🔥 New issue
+name: ️🔥 New incident
 description: I noticed an outage and want to report it.
-title: 🔥 New issue
-labels: ['issue']
+title: 🔥 New incident
+labels: ['incident']
 assignees:
   - steveoh
 body:
   - type: markdown
     attributes:
       value: |
-        For UGRC staff, when you are aware of a system issue, please fill out the following form.
-        After submitting this issue, GitHub will create:
+        For UGRC staff, when you are aware of a system incident, please fill out the following form.
+        After submitting this incident, GitHub will create:
 
         1. a new markdown file in the `/src/content/incident` directory with the correct date and title you provide,
 
@@ -18,8 +18,8 @@ body:
   - type: input
     id: name
     attributes:
-      label: Issue title
-      description: What is the title of the issue? This will end up in the url so keep it short and to the point. This should be greater than 15 characters but less than 71 are preferred.
+      label: Incident title
+      description: What is the title of the incident? This will end up in the url so keep it short and to the point. This should be greater than 15 characters but less than 71 are preferred.
       placeholder: e.g. Network outage
     validations:
       required: true
