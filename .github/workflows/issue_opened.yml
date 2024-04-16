@@ -6,7 +6,7 @@ on:
 
 jobs:
   open-pr:
-    name: Open PR for new incident
+    name: Create new incident post
     runs-on: ubuntu-latest
     steps:
       - name: 🎬 Update status
