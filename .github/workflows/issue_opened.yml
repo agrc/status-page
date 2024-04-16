@@ -56,7 +56,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: 'feat: create new incident post'
           title: 'feat: create new incident post'
-          body: 'This PR was automatically created by the "Issue opened (new incident)" workflow.'
+          body: 'This PR was automatically created by the "Issue opened (new incident)" workflow.\n\ncloses #${{ github.event.issue.number}}'
           branch: feat/new-incident-${{ github.event.issue.number }}
           draft: true
 
