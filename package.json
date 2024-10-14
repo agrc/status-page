@@ -24,7 +24,7 @@
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-navigation-menu": "^1.2.1",
     "@radix-ui/react-popover": "^1.1.2",
-    "astro": "^4.15.12",
+    "astro": "^4.16.3",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "html-to-text": "^9.0.5",
