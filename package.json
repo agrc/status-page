@@ -14,23 +14,23 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/mdx": "^3.1.7",
+    "@astrojs/mdx": "^3.1.9",
     "@astrojs/react": "^3.6.2",
-    "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.2.0",
-    "@astrojs/tailwind": "^5.1.1",
+    "@astrojs/rss": "^4.0.9",
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/tailwind": "^5.1.2",
     "@heroicons/react": "^2.1.5",
     "@radix-ui/react-collapsible": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-navigation-menu": "^1.2.1",
     "@radix-ui/react-popover": "^1.1.2",
-    "astro": "^4.16.3",
+    "astro": "^4.16.8",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "html-to-text": "^9.0.5",
     "lodash.capitalize": "^4.2.1",
     "lodash.startcase": "^4.4.0",
-    "mdast-util-from-markdown": "^2.0.1",
+    "mdast-util-from-markdown": "^2.0.2",
     "mdast-util-mdx": "^3.0.0",
     "mdast-util-to-string": "^4.0.0",
     "micromark-extension-mdxjs": "^3.0.0",
@@ -40,11 +40,11 @@
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "tailwind-merge": "^2.5.3",
-    "tailwindcss": "^3.4.13",
-    "typescript": "^5.6.2",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss": "^3.4.14",
+    "typescript": "^5.6.3",
     "unist-util-remove": "^4.0.0",
-    "yaml": "^2.5.1"
+    "yaml": "^2.6.0"
   },
   "prettier": {
     "printWidth": 120,
@@ -58,8 +58,8 @@
     "@types/html-to-text": "^9.0.4",
     "@types/lodash.capitalize": "^4.2.9",
     "@types/lodash.startcase": "^4.4.9",
-    "@types/node": "^22.7.4",
-    "@types/react": "^18.3.11",
-    "@types/react-dom": "^18.3.0"
+    "@types/node": "^22.8.6",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
   }
 }
