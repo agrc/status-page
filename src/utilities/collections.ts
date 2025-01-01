@@ -31,14 +31,13 @@ function getSnippetFromMarkdown(markdown: string, type: 'md' | 'mdx'): string {
   const options = type === 'mdx' ? { extensions: [mdxjs()], mdastExtensions: [mdxFromMarkdown()] } : null;
 
   const parsedMarkdown = fromMarkdown(markdown, options);
-
   // if the markdown is just a single HTML node, convert it to text
   if (parsedMarkdown.children.length === 1 && parsedMarkdown.children[0].type === 'html') {
     return convert(parsedMarkdown.children[0].value);
   }
 
   // remove any non-text nodes such as ESM imports in MDX files
-  remove(parsedMarkdown, (node) => !['paragraph', 'heading', 'text'].includes(node.type));
+  remove(parsedMarkdown, (node) => !['paragraph', 'heading', 'text', 'link'].includes(node.type));
 
   return toString(parsedMarkdown, { includeImageAlt: false }).slice(0, 200) ?? 'a blog post';
 }
@@ -48,13 +47,13 @@ export async function getIncidents(all = false): Promise<DecoratedIncidentEntry[
     .filter((incident) => all || incident.data.resolved === false)
     .sort((b, a) => a.data.date.valueOf() - b.data.date.valueOf())
     .map((incident): DecoratedIncidentEntry => {
-      const documentType = incident.id.split('.').pop() as 'md' | 'mdx';
+      const documentType = incident.filePath?.split('.').pop() as 'md' | 'mdx';
 
       return {
         ...incident,
         data: {
           ...incident.data,
-          snippet: getSnippetFromMarkdown(incident.body, documentType),
+          snippet: getSnippetFromMarkdown(incident.body ?? '', documentType),
           lastUpdated: getLastModifiedTime(incident.id),
           severity: incident.data.severity,
         },

@@ -25,7 +25,7 @@ const pageDescription = 'A collection of UGRC prior incidents.';
   <Pagination page={page} class="my-5" baseHref="incident" slot="pagination" />
   {
     page.data.map((post) => (
-      <CardForIncident title={post.data.title} date={post.data.date} slug={post.slug} snippet={post.data.snippet} />
+      <CardForIncident title={post.data.title} date={post.data.date} slug={post.id} snippet={post.data.snippet} />
     ))
   }
 </Layout>
