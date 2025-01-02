@@ -12,7 +12,7 @@ const getLastModifiedTime = (path: string) => {
     return new Date();
   }
 
-  const updated = execSync(`git log -1 --pretty="format:%cI" ./src/content/incident/${path}`).toString();
+  const updated = execSync(`git log -1 --pretty="format:%cI" ${path}`).toString();
 
   return !updated ? new Date() : new Date(updated);
 };
@@ -54,7 +54,7 @@ export async function getIncidents(all = false): Promise<DecoratedIncidentEntry[
         data: {
           ...incident.data,
           snippet: getSnippetFromMarkdown(incident.body ?? '', documentType),
-          lastUpdated: getLastModifiedTime(incident.id),
+          lastUpdated: getLastModifiedTime(incident.filePath ?? ''),
           severity: incident.data.severity,
         },
       };
