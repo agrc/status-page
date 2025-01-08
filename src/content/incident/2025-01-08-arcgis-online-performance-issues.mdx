@@ -4,8 +4,10 @@ date: '2025-01-08T17:17:58.282Z'
 severity: degraded-performance
 affectedSystems:
   - sgid on arcgis
-resolved: false
+resolved: true
 ---
+import Update from '@components/status/Update.astro';
+
 The ArcGIS Online platform is experiencing issues with Hosted Feature Services. From the [ArcGIS Online Health Dashboard](https://status.arcgis.com/)
 
 > [07:45 PST]
@@ -13,3 +15,5 @@ The ArcGIS Online platform is experiencing issues with Hosted Feature Services. 
 > We are experiencing intermittent performance issues with our Hosted Feature Services affecting a subset of our customers. We are investigating the problem.
 
 UGRC is a part of the subset of customers affected. Hosted feature services accessed from our website or via applications may experience time outs and other odd behavior. We will monitor the Health Dashboard for updates.
+
+<Update date="2025-01-08T21:18:00.000Z">11:18 PST - Esri has resolved the issue.</Update>
