@@ -1,0 +1,16 @@
+{
+  "plugins": [
+    "prettier-plugin-organize-imports",
+    "prettier-plugin-packagejson",
+    "prettier-plugin-tailwindcss",
+    "prettier-plugin-astro"
+  ],
+  "printWidth": 120,
+  "singleQuote": true,
+  "tailwindFunctions": [
+    "clsx",
+    "tv",
+    "twMerge",
+    "twJoin"
+  ]
+}
