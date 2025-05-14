@@ -142,11 +142,11 @@ export const Menu = ({ currentUri }) => {
           </MenuLink>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Indicator className="data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in bg-primary z-10 mt-[0.3rem] h-1 overflow-hidden rounded-t-full transition-all" />
+        <NavigationMenu.Indicator className="data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in bg-primary-100 z-10 mt-[0.3rem] h-1 overflow-hidden rounded-t-full transition-all" />
       </NavigationMenu.List>
 
       <div className="absolute top-full left-3 flex w-full perspective-[2000px]">
-        <NavigationMenu.Viewport className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=closed]:zoom-out data-[state=open]:zoom-in relative mt-2.5 h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-md border bg-white shadow-lg transition-[width,_height] sm:w-[var(--radix-navigation-menu-viewport-width)]" />
+        <NavigationMenu.Viewport className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=closed]:zoom-out data-[state=open]:zoom-in relative mt-2.5 h-(--radix-navigation-menu-viewport-height) w-full origin-[top_center] overflow-hidden rounded-md border bg-white shadow-lg transition-[width,height] sm:w-(--radix-navigation-menu-viewport-width)" />
       </div>
     </NavigationMenu.Root>
   );
@@ -155,9 +155,9 @@ export const SmallMenu = ({ currentUri }) => (
   <Dialog.Root>
     <div className="items-between flex h-12 shrink-0 bg-zinc-100 lg:hidden dark:bg-zinc-800">
       <div className="flex flex-1 items-center justify-between">
-        <Dialog.Trigger asChild className="focus:shadow-primary outline-none focus:shadow-[0_0_0_2px]">
+        <Dialog.Trigger asChild className="focus:shadow-primary-100 outline-none focus:shadow-[0_0_0_2px]">
           <button
-            className="focus:shadow-primary ml-2 rounded-full p-1 outline-none focus:shadow-[0_0_0_2px]"
+            className="focus:shadow-primary-100 ml-2 rounded-full p-1 outline-none focus:shadow-[0_0_0_2px]"
             aria-label="open the main menu"
           >
             <Bars3Icon className="size-6 text-zinc-800 focus:outline-none dark:text-zinc-50" />
@@ -199,7 +199,7 @@ export const SmallMenu = ({ currentUri }) => (
               <NavigationMenu.Content>
                 <NavigationMenu.List className="pt-1 pl-2">
                   <NavigationMenu.Item value="solutions-audience">
-                    <p className="text-primary dark:text-accent pb-2 pl-2 text-xs uppercase">By audience</p>
+                    <p className="text-primary-100 dark:text-accent-100 pb-2 pl-2 text-xs uppercase">By audience</p>
                     <MobileListItem href="https://gis.utah.gov/solutions/for-government">
                       Government employees
                     </MobileListItem>
@@ -209,7 +209,7 @@ export const SmallMenu = ({ currentUri }) => (
                     </MobileListItem>
                     <MobileListItem href="https://gis.utah.gov/solutions/for-surveyors">Surveyors</MobileListItem>
                     <MobileListItem href="https://gis.utah.gov/solutions/for-students">Students</MobileListItem>
-                    <p className="text-primary dark:text-accent py-2 pl-2 text-xs uppercase">By use case</p>
+                    <p className="text-primary-100 dark:text-accent-100 py-2 pl-2 text-xs uppercase">By use case</p>
                     <MobileListItem href="https://gis.utah.gov/solutions/spatial-data-management">
                       Spatial data management
                     </MobileListItem>
@@ -261,7 +261,7 @@ export const SmallMenu = ({ currentUri }) => (
         </NavigationMenu.Root>
         <Dialog.Close asChild>
           <button
-            className="focus:shadow-primary dark:hover:bg-primary absolute top-[10px] left-[10px] inline-flex size-6 appearance-none items-center justify-center rounded-full text-zinc-800 hover:bg-zinc-200 focus:shadow-[0_0_0_2px] focus:outline-none dark:text-white"
+            className="focus:shadow-primary-100 dark:hover:bg-primary-100 absolute top-[10px] left-[10px] inline-flex size-6 appearance-none items-center justify-center rounded-full text-zinc-800 hover:bg-zinc-200 focus:shadow-[0_0_0_2px] focus:outline-none dark:text-white"
             aria-label="Close"
           >
             <svg
@@ -296,9 +296,9 @@ const MenuLink = ({ href, children, currentUri }) => {
     <NavigationMenu.Link
       href={href}
       className={clsx(
-        'custom-style focus:shadow-primary relative block rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
+        'custom-style focus:shadow-primary-100 relative block rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
         {
-          'text-secondary before:bg-accent before:absolute before:-top-[.55rem] before:left-0 before:z-10 before:block before:h-1 before:w-full before:rounded-b-full':
+          'text-secondary-100 before:bg-accent-100 before:absolute before:-top-[.55rem] before:left-0 before:z-10 before:block before:h-1 before:w-full before:rounded-b-full':
             isActive(href, currentUri),
         },
       )}
@@ -312,9 +312,9 @@ const MobileMenuLink = ({ href, children, currentUri }) => {
     <NavigationMenu.Link
       href={href}
       className={clsx(
-        'custom-style focus:shadow-primary relative block rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
+        'custom-style focus:shadow-primary-100 relative block rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
         {
-          'text-secondary before:bg-accent before:absolute before:top-0 before:-left-[28px] before:h-8 before:w-2 before:rounded-e-full':
+          'text-secondary-100 before:bg-accent-100 before:absolute before:top-0 before:-left-[28px] before:h-8 before:w-2 before:rounded-e-full':
             isActive(href, currentUri),
         },
       )}
@@ -326,9 +326,9 @@ const MobileMenuLink = ({ href, children, currentUri }) => {
 const DropDownMenu = ({ to, children, currentUri }) => (
   <NavigationMenu.Trigger
     className={clsx(
-      'custom-style group focus:shadow-primary relative flex items-center justify-between gap-1 rounded-full px-4 py-2 text-sm leading-none font-semibold text-zinc-600 outline-none select-none hover:bg-white/20 hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
+      'custom-style group focus:shadow-primary-100 relative flex items-center justify-between gap-1 rounded-full px-4 py-2 text-sm leading-none font-semibold text-zinc-600 outline-none select-none hover:bg-white/20 hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
       {
-        'text-secondary before:bg-accent before:absolute before:-top-[0.47rem] before:left-0 before:z-10 before:block before:h-1 before:w-full before:rounded-b-full':
+        'text-secondary-100 before:bg-accent-100 before:absolute before:-top-[0.47rem] before:left-0 before:z-10 before:block before:h-1 before:w-full before:rounded-b-full':
           isActive(to, currentUri),
       },
     )}
@@ -344,9 +344,9 @@ const MobileDropDownMenu = ({ href, children, currentUri }) => {
   return (
     <NavigationMenu.Trigger
       className={clsx(
-        'custom-style group focus:shadow-primary relative flex items-center justify-between gap-1 rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
+        'custom-style group focus:shadow-primary-100 relative flex items-center justify-between gap-1 rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
         {
-          'text-secondary before:bg-accent before:absolute before:top-0 before:-left-[28px] before:h-8 before:w-1':
+          'text-secondary-100 before:bg-accent-100 before:absolute before:top-0 before:-left-[28px] before:h-8 before:w-1':
             isActive(href, currentUri),
         },
       )}
@@ -375,7 +375,7 @@ const ListItem = React.forwardRef(({ className, children, title, ...props }, for
     <NavigationMenu.Link asChild>
       <a
         className={clsx(
-          'custom-style focus:shadow-primary block cursor-pointer rounded p-3 text-base no-underline outline-none select-none hover:bg-zinc-100 focus:shadow-[0_0_0_2px] sm:py-1',
+          'custom-style focus:shadow-primary-100 block cursor-pointer rounded p-3 text-base no-underline outline-none select-none hover:bg-zinc-100 focus:shadow-[0_0_0_2px] sm:py-1',
           className,
         )}
         {...props}
@@ -392,7 +392,7 @@ const MobileListItem = React.forwardRef(({ className, children, ...props }, forw
     <NavigationMenu.Link asChild>
       <a
         className={clsx(
-          'custom-style focus:shadow-primary block cursor-pointer rounded-full p-3 no-underline outline-none select-none hover:bg-zinc-200 focus:shadow-[0_0_0_2px] sm:py-1 dark:hover:bg-white/20 dark:focus:shadow-zinc-200',
+          'custom-style focus:shadow-primary-100 block cursor-pointer rounded-full p-3 no-underline outline-none select-none hover:bg-zinc-200 focus:shadow-[0_0_0_2px] sm:py-1 dark:hover:bg-white/20 dark:focus:shadow-zinc-200',
           className,
         )}
         {...props}

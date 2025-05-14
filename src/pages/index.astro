@@ -19,7 +19,7 @@ if (!openIncidents) {
 
 <Layout bannerHeading="UGRC system status" pageTitle="UGRC - System status">
   <section class="w-full bg-zinc-100 pt-10 pb-16 dark:bg-zinc-900 dark:text-zinc-50">
-    <div class="mx-auto px-8 pb-6 text-center md:max-w-screen-lg">
+    <div class="mx-auto px-8 pb-6 text-center md:max-w-(--breakpoint-lg)">
       <h1>UGRC systems</h1>
       <div class="mt-10 grid justify-items-center gap-6 lg:grid-cols-2">
         {
@@ -34,7 +34,7 @@ if (!openIncidents) {
     </div>
   </section>
   <section class="dark:bg-primary-950 w-full bg-zinc-900 pt-10 pb-16 dark:text-zinc-300">
-    <div class="mx-auto grid grow grid-cols-1 gap-12 md:max-w-screen-lg lg:px-8 2xl:px-0">
+    <div class="mx-auto grid grow grid-cols-1 gap-12 md:max-w-(--breakpoint-lg) lg:px-8 2xl:px-0">
       <div class="flex flex-1 flex-col justify-center gap-6 self-center">
         <div class="my-3 max-w-xl self-center">
           <h2 class="text-center text-zinc-50">Past incidents</h2>

@@ -10,7 +10,7 @@ const { date, style } = Astro.props;
 <time datetime={date.toISOString()}>
   {
     style === 'long' && (
-      <div class="text-primary/80 dark:text-accent text-center font-medium">
+      <div class="text-primary-100/80 dark:text-accent-100 text-center font-medium">
         {date.toLocaleDateString('en-us', {
           month: 'short',
           year: 'numeric',
@@ -22,18 +22,18 @@ const { date, style } = Astro.props;
   {
     style.startsWith('short') && (
       <div class="flex flex-col items-center justify-center">
-        <div class="text-primary/90 dark:text-accent text-center font-medium">
+        <div class="text-primary-100/90 dark:text-accent-100 text-center font-medium">
           {date.toLocaleDateString('en-us', {
             month: 'short',
           })}
         </div>
-        <div class="text-primary/80 dark:text-accent w-16 text-center text-3xl font-bold">
+        <div class="text-primary-100/80 dark:text-accent-100 w-16 text-center text-3xl font-bold">
           {date.toLocaleDateString('en-us', {
             day: 'numeric',
           })}
         </div>
         {style === 'short-with-year' && (
-          <div class="text-primary/80 dark:text-accent text-center font-medium">
+          <div class="text-primary-100/80 dark:text-accent-100 text-center font-medium">
             {date.toLocaleDateString('en-us', {
               year: 'numeric',
             })}

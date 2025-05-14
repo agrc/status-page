@@ -13,9 +13,9 @@ const { year, month, day } = getDateParts(date);
 ---
 
 <div
-  class="has-[:focus]:ring-accent flex max-w-sm flex-col overflow-hidden rounded-lg border border-black/20 bg-white shadow has-[:focus]:ring-4 has-[:focus]:outline-none dark:bg-zinc-900/70"
+  class="has-focus:ring-accent-100 flex max-w-sm flex-col overflow-hidden rounded-lg border border-black/20 bg-white shadow has-focus:ring-4 has-focus:outline-none dark:bg-zinc-900/70"
 >
-  <div class="bg-primary dark:bg-secondary px-4 py-1 text-center text-sm font-black text-zinc-50 uppercase">
+  <div class="bg-primary-100 dark:bg-secondary-100 px-4 py-1 text-center text-sm font-black text-zinc-50 uppercase">
     <span class="line-clamp-1 pl-2">{title}</span>
   </div>
   <a href={`/incident/${slug}/`} class="custom-style flex flex-1 flex-col divide-y divide-black/20 focus:outline-none">
@@ -26,7 +26,7 @@ const { year, month, day } = getDateParts(date);
     </div>
     <time
       datetime={date.toISOString()}
-      class="bg-secondary-200 dark:bg-secondary flex items-center justify-between px-4 py-1 text-zinc-50 dark:text-zinc-300"
+      class="bg-secondary-200 dark:bg-secondary-100 flex items-center justify-between px-4 py-1 text-zinc-50 dark:text-zinc-300"
     >
       <span class="font-black">{year}</span>
       <span class="text-xs uppercase">{month} {day}</span></time

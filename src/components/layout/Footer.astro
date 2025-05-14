@@ -36,51 +36,54 @@ const sha = import.meta.env.COMMIT_REF?.substring(0, 8) ?? 'dev';
         <li class="mt-4 block">
           <a
             href="https://gis.utah.gov/"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Home</a
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none">Home</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/products"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Products</a
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
+            >Products</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/solutions"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Solutions</a
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
+            >Solutions</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/documentation"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
             >Documentation</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/collaboration"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
             >Collaboration</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/blog"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Blog</a
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none">Blog</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/about"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">About</a
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none">About</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/contact"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Contact</a
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
+            >Contact</a
           >
         </li>
       </ul>
@@ -91,35 +94,35 @@ const sha = import.meta.env.COMMIT_REF?.substring(0, 8) ?? 'dev';
         <li class="mt-4 block">
           <a
             href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
             >Content contributing guide</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/about/media"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
             >Logos and media resources</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/documentation/policy"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
             >UGRC Policies</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/about/code"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
             >GIS-related Utah statute</a
           >
         </li>
         <li>
           <a
             href="https://s.utah.gov/ugrc-newsletter"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
             >Sign up for our newsletter</a
           >
         </li>
@@ -131,18 +134,18 @@ const sha = import.meta.env.COMMIT_REF?.substring(0, 8) ?? 'dev';
         <li class="mt-4 block">
           Build: <a
             href={`https://github.com/agrc/status-page/commit/${sha}`}
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">{sha}</a
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none">{sha}</a
           >
         </li>
         <li>
           <a
             href="https://github.com/agrc/status-page/issues/new"
-            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
+            class="custom-style focus:ring-accent-100 rounded hover:underline focus:ring-1 focus:outline-none"
             >Report an issue</a
           >
         </li>
         <li class="mt-4">
-          <a href="https://www.netlify.com" class="custom-style focus:outline-accent">
+          <a href="https://www.netlify.com" class="custom-style focus:outline-accent-100">
             <Image src={netlifyLogo} alt="hosted on netlify" width={100} height={44} />
           </a>
         </li>
@@ -151,7 +154,7 @@ const sha = import.meta.env.COMMIT_REF?.substring(0, 8) ?? 'dev';
   </div>
 </section>
 <div class="bg-zinc-600">
-  <div class="mx-auto w-[calc(100%-2*32px)] border-0 border-b"></div>
+  <div class="mx-auto w-[calc(100%-2*32px)] border-0 border-b border-gray-200"></div>
   <div class="relative grid grid-cols-1 items-center justify-between p-8 md:grid-cols-2 lg:flex-row">
     <div
       class="flex flex-col items-center gap-4 divide-zinc-300 text-center lg:h-8 lg:flex-row lg:divide-x lg:text-left"

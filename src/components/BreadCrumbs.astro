@@ -36,7 +36,7 @@ const length = parts.length - 1;
 <BreadCrumbChrome class={className} gradients={gradients}>
   <li class="relative flex shrink-0 items-center">
     <a
-      class="custom-style focus:shadow-primary relative block rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200"
+      class="custom-style focus:shadow-primary-100 relative block rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200"
       href="/"
       ><svg
         xmlns="http://www.w3.org/2000/svg"
@@ -66,12 +66,12 @@ const length = parts.length - 1;
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="text-primary dark:text-accent size-3 shrink-0"
+            class="text-primary-100 dark:text-accent-100 size-3 shrink-0"
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
           </svg>
           <a
-            class="custom-style focus:shadow-primary relative block rounded-full p-2 text-sm leading-none font-normal text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200"
+            class="custom-style focus:shadow-primary-100 relative block rounded-full p-2 text-sm leading-none font-normal text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200"
             href={`/${parts
               .slice(0, index + 1)
               .join('/')
@@ -88,7 +88,7 @@ const length = parts.length - 1;
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="text-primary dark:text-accent size-3 shrink-0"
+            class="text-primary-100 dark:text-accent-100 size-3 shrink-0"
           >
             <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
           </svg>
@@ -96,7 +96,7 @@ const length = parts.length - 1;
             {segment.replaceAll('-', ' ')}
           </span>
         </li>
-      ),
+      )
     )
   }
 </BreadCrumbChrome>

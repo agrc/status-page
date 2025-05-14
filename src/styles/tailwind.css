@@ -1,5 +1,32 @@
 @import 'tailwindcss';
 
+@theme {
+  --color-primary-100: #4d2a54;
+  --color-primary-950: #36163c;
+  --color-secondary-100: #33505d;
+  --color-secondary-200: #4d7b8d;
+  --color-accent-100: #eaca00;
+
+  --animate-shake: shake 0.1s ease-out;
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(0.6rem);
+    }
+    50% {
+      transform: translateX(-0.6rem);
+    }
+    75% {
+      transform: translateX(0.6rem);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
 @layer base {
   html,
   body,
@@ -7,19 +34,19 @@
     @apply h-full min-h-full w-full;
   }
   .stripe-background a:not(.custom-style) {
-    @apply text-secondary hover:text-primary dark:text-accent hover:dark:text-accent;
+    @apply text-secondary-100 hover:text-primary-100 dark:text-accent-100 hover:dark:text-accent-100;
   }
   .stripe-background details a:not(.custom-style) {
-    @apply text-accent hover:text-accent hover:bg-white/10;
+    @apply text-accent-100 hover:text-accent-100 hover:bg-white/10;
   }
   .primary-background a:not(.custom-style) {
-    @apply text-accent hover:bg-white/10;
+    @apply text-accent-100 hover:bg-white/10;
   }
   a:not(.custom-style) {
-    @apply text-primary focus:ring-accent dark:text-accent font-semibold hover:bg-black/10 focus:ring-1 focus:outline-none dark:hover:bg-white/10;
+    @apply text-primary-100 focus:ring-accent-100 dark:text-accent-100 font-semibold hover:bg-black/10 focus:ring-1 focus:outline-none dark:hover:bg-white/10;
   }
   .card a:not(.custom-style) {
-    @apply text-primary dark:text-accent font-semibold hover:bg-black/10 dark:hover:bg-white/10;
+    @apply text-primary-100 dark:text-accent-100 font-semibold hover:bg-black/10 dark:hover:bg-white/10;
   }
   h1 {
     @apply text-3xl font-bold md:text-4xl;

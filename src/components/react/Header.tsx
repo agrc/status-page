@@ -10,15 +10,13 @@ export const Header = ({ className, children }: HeaderProps) => {
   return (
     <Collapsible.Root>
       <header className={className}>
-        <div className="flex items-center justify-between border-b border-b-primary/30 px-3 pb-2 pt-1 dark:border-black/10">
+        <div className="border-b-primary-100/30 flex items-center justify-between border-b px-3 pt-1 pb-2 dark:border-black/10">
           <div className="flex h-16 flex-1 flex-row space-x-4 divide-x divide-slate-500 sm:space-x-6">
             <Collapsible.Trigger className="h-16 w-28">
               <span className="sr-only">An official website of the State of Utah. Click to learn more.</span>
               <svg
-                className="fill-primary text-sm dark:fill-white"
-                style={{
-                  fontFamily: 'SourceSansPro-Regular,Source Sans Pro,Arial,Helvetica,sans-serif',
-                }}
+                className="fill-primary-100 text-sm dark:fill-white"
+                style={{ fontFamily: 'SourceSansPro-Regular,Source Sans Pro,Arial,Helvetica,sans-serif' }}
                 viewBox="0 0 105.9496 47.6226"
                 role="img"
                 aria-hidden="true"
@@ -72,9 +70,7 @@ const Flyout = () => {
         <div className="flex items-center gap-4 text-zinc-50 sm:flex-col sm:gap-0">
           <svg
             className="w-36 fill-current text-sm"
-            style={{
-              fontFamily: 'SourceSansPro-Regular,Source Sans Pro,Arial,Helvetica,sans-serif',
-            }}
+            style={{ fontFamily: 'SourceSansPro-Regular,Source Sans Pro,Arial,Helvetica,sans-serif' }}
             viewBox="0 0 105.9496 47.6226"
             role="img"
           >
@@ -92,7 +88,7 @@ const Flyout = () => {
           <div className="text-sm">© State of Utah</div>
         </div>
       </div>
-      <Collapsible.Trigger className="absolute right-2 top-2 rounded-full p-1 text-zinc-50 hover:bg-black/10">
+      <Collapsible.Trigger className="absolute top-2 right-2 rounded-full p-1 text-zinc-50 hover:bg-black/10">
         <XMarkIcon className="w-7" />
         <span className="sr-only">Close official website popup</span>
       </Collapsible.Trigger>
