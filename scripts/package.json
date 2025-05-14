@@ -21,11 +21,11 @@
   },
   "homepage": "https://github.com/agrc/status-page#readme",
   "dependencies": {
-    "@octokit/rest": "^21.0.0",
+    "@octokit/rest": "^21.1.1",
     "gray-matter": "^4.0.3",
     "lodash.capitalize": "^4.2.1"
   },
   "devDependencies": {
-    "mock-fs": "^5.2.0"
+    "mock-fs": "^5.5.0"
   }
 }
