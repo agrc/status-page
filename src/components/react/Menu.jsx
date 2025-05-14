@@ -18,7 +18,7 @@ export const Menu = ({ currentUri }) => {
           <DropDownMenu to="/products" currentUri={currentUri}>
             Products
           </DropDownMenu>
-          <NavigationMenu.Content className="data-[motion=from-end]:animate-in data-[motion=from-start]:animate-in data-[motion=to-end]:animate-out data-[motion=to-start]:animate-out data-[motion=from-end]:slide-in-from-right data-[motion=from-start]:slide-in-from-left data-[motion=to-end]:slide-out-to-right data-[motion=to-start]:slide-out-to-left data-[motion=from-end]:anim-duration-500 data-[motion=from-start]:anim-duration-500 data-[motion=to-end]:anim-duration-500 data-[motion=to-start]:anim-duration-500 absolute left-0 top-0 w-full sm:w-auto">
+          <NavigationMenu.Content className="data-[motion=from-end]:animate-in data-[motion=from-start]:animate-in data-[motion=to-end]:animate-out data-[motion=to-start]:animate-out data-[motion=from-end]:slide-in-from-right data-[motion=from-start]:slide-in-from-left data-[motion=to-end]:slide-out-to-right data-[motion=to-start]:slide-out-to-left data-[motion=from-end]:anim-duration-500 data-[motion=from-start]:anim-duration-500 data-[motion=to-end]:anim-duration-500 data-[motion=to-start]:anim-duration-500 absolute top-0 left-0 w-full sm:w-auto">
             <MegaMenuChrome className="flex w-full flex-col gap-4 pr-6 md:gap-2">
               <MegaMenuItem>
                 <ListItem title="SGID" href="https://gis.utah.gov/products/sgid">
@@ -44,7 +44,7 @@ export const Menu = ({ currentUri }) => {
           <DropDownMenu to="/solutions" currentUri={currentUri}>
             Solutions
           </DropDownMenu>
-          <NavigationMenu.Content className="data-[motion=from-end]:animate-in data-[motion=from-start]:animate-in data-[motion=to-end]:animate-out data-[motion=to-start]:animate-out data-[motion=from-end]:slide-in-from-right data-[motion=from-start]:slide-in-from-left data-[motion=to-end]:slide-out-to-right data-[motion=to-start]:slide-out-to-left data-[motion=from-end]:anim-duration-500 data-[motion=from-start]:anim-duration-500 data-[motion=to-end]:anim-duration-500 data-[motion=to-start]:anim-duration-500 absolute left-0 top-0 w-full sm:w-auto">
+          <NavigationMenu.Content className="data-[motion=from-end]:animate-in data-[motion=from-start]:animate-in data-[motion=to-end]:animate-out data-[motion=to-start]:animate-out data-[motion=from-end]:slide-in-from-right data-[motion=from-start]:slide-in-from-left data-[motion=to-end]:slide-out-to-right data-[motion=to-start]:slide-out-to-left data-[motion=from-end]:anim-duration-500 data-[motion=from-start]:anim-duration-500 data-[motion=to-end]:anim-duration-500 data-[motion=to-start]:anim-duration-500 absolute top-0 left-0 w-full sm:w-auto">
             <MegaMenuChrome className="flex w-full flex-row gap-4 pr-6 md:gap-2">
               <MegaMenuItem title="By audience" containerCss="md:w-1/3">
                 <ListItem
@@ -142,10 +142,10 @@ export const Menu = ({ currentUri }) => {
           </MenuLink>
         </NavigationMenu.Item>
 
-        <NavigationMenu.Indicator className="data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in z-10 mt-[0.3rem] h-1 overflow-hidden rounded-t-full bg-primary transition-all" />
+        <NavigationMenu.Indicator className="data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in bg-primary z-10 mt-[0.3rem] h-1 overflow-hidden rounded-t-full transition-all" />
       </NavigationMenu.List>
 
-      <div className="perspective-[2000px] absolute left-3 top-full flex w-full">
+      <div className="absolute top-full left-3 flex w-full perspective-[2000px]">
         <NavigationMenu.Viewport className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in data-[state=closed]:zoom-out data-[state=open]:zoom-in relative mt-2.5 h-[var(--radix-navigation-menu-viewport-height)] w-full origin-[top_center] overflow-hidden rounded-md border bg-white shadow-lg transition-[width,_height] sm:w-[var(--radix-navigation-menu-viewport-width)]" />
       </div>
     </NavigationMenu.Root>
@@ -155,9 +155,9 @@ export const SmallMenu = ({ currentUri }) => (
   <Dialog.Root>
     <div className="items-between flex h-12 shrink-0 bg-zinc-100 lg:hidden dark:bg-zinc-800">
       <div className="flex flex-1 items-center justify-between">
-        <Dialog.Trigger asChild className="outline-none focus:shadow-[0_0_0_2px] focus:shadow-primary">
+        <Dialog.Trigger asChild className="focus:shadow-primary outline-none focus:shadow-[0_0_0_2px]">
           <button
-            className="ml-2 rounded-full p-1 outline-none focus:shadow-[0_0_0_2px] focus:shadow-primary"
+            className="focus:shadow-primary ml-2 rounded-full p-1 outline-none focus:shadow-[0_0_0_2px]"
             aria-label="open the main menu"
           >
             <Bars3Icon className="size-6 text-zinc-800 focus:outline-none dark:text-zinc-50" />
@@ -167,7 +167,7 @@ export const SmallMenu = ({ currentUri }) => (
     </div>
     <Dialog.Portal>
       <Dialog.Overlay className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out data-[state=open]:fade-in fixed inset-0 z-40 bg-black/80" />
-      <Dialog.Content className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left fixed inset-y-0 left-0 z-50 h-full w-72 gap-4 border-r border-white/20 bg-zinc-50 p-6 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 sm:max-w-sm dark:bg-primary-950">
+      <Dialog.Content className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left dark:bg-primary-950 fixed inset-y-0 left-0 z-50 h-full w-72 gap-4 border-r border-white/20 bg-zinc-50 p-6 shadow-lg transition ease-in-out data-[state=closed]:duration-300 data-[state=open]:duration-500 sm:max-w-sm">
         <NavigationMenu.Root orientation="vertical">
           <NavigationMenu.List className="mt-4 flex list-none flex-col p-1">
             <NavigationMenu.Item value="home">
@@ -181,7 +181,7 @@ export const SmallMenu = ({ currentUri }) => (
                 Products
               </MobileDropDownMenu>
               <NavigationMenu.Content>
-                <NavigationMenu.List className="pl-2 pt-1">
+                <NavigationMenu.List className="pt-1 pl-2">
                   <NavigationMenu.Item value="products">
                     <MobileListItem href="https://gis.utah.gov/products/sgid">SGID</MobileListItem>
                     <MobileListItem href="https://gis.utah.gov/products/discover">Discover</MobileListItem>
@@ -197,9 +197,9 @@ export const SmallMenu = ({ currentUri }) => (
                 Solutions
               </MobileDropDownMenu>
               <NavigationMenu.Content>
-                <NavigationMenu.List className="pl-2 pt-1">
+                <NavigationMenu.List className="pt-1 pl-2">
                   <NavigationMenu.Item value="solutions-audience">
-                    <p className="pb-2 pl-2 text-xs uppercase text-primary dark:text-accent">By audience</p>
+                    <p className="text-primary dark:text-accent pb-2 pl-2 text-xs uppercase">By audience</p>
                     <MobileListItem href="https://gis.utah.gov/solutions/for-government">
                       Government employees
                     </MobileListItem>
@@ -209,7 +209,7 @@ export const SmallMenu = ({ currentUri }) => (
                     </MobileListItem>
                     <MobileListItem href="https://gis.utah.gov/solutions/for-surveyors">Surveyors</MobileListItem>
                     <MobileListItem href="https://gis.utah.gov/solutions/for-students">Students</MobileListItem>
-                    <p className="py-2 pl-2 text-xs uppercase text-primary dark:text-accent">By use case</p>
+                    <p className="text-primary dark:text-accent py-2 pl-2 text-xs uppercase">By use case</p>
                     <MobileListItem href="https://gis.utah.gov/solutions/spatial-data-management">
                       Spatial data management
                     </MobileListItem>
@@ -261,7 +261,7 @@ export const SmallMenu = ({ currentUri }) => (
         </NavigationMenu.Root>
         <Dialog.Close asChild>
           <button
-            className="absolute left-[10px] top-[10px] inline-flex size-6 appearance-none items-center justify-center rounded-full text-zinc-800 hover:bg-zinc-200 focus:shadow-[0_0_0_2px] focus:shadow-primary focus:outline-none dark:text-white dark:hover:bg-primary"
+            className="focus:shadow-primary dark:hover:bg-primary absolute top-[10px] left-[10px] inline-flex size-6 appearance-none items-center justify-center rounded-full text-zinc-800 hover:bg-zinc-200 focus:shadow-[0_0_0_2px] focus:outline-none dark:text-white"
             aria-label="Close"
           >
             <svg
@@ -296,9 +296,9 @@ const MenuLink = ({ href, children, currentUri }) => {
     <NavigationMenu.Link
       href={href}
       className={clsx(
-        'custom-style relative block select-none rounded-full px-3 py-2 text-sm font-medium leading-none text-zinc-600 no-underline outline-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] focus:shadow-primary dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
+        'custom-style focus:shadow-primary relative block rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
         {
-          'text-secondary before:absolute before:-top-[.55rem] before:left-0 before:z-10 before:block before:h-1 before:w-full before:rounded-b-full before:bg-accent':
+          'text-secondary before:bg-accent before:absolute before:-top-[.55rem] before:left-0 before:z-10 before:block before:h-1 before:w-full before:rounded-b-full':
             isActive(href, currentUri),
         },
       )}
@@ -312,9 +312,9 @@ const MobileMenuLink = ({ href, children, currentUri }) => {
     <NavigationMenu.Link
       href={href}
       className={clsx(
-        'custom-style relative block select-none rounded-full px-3 py-2 text-sm font-medium leading-none text-zinc-600 no-underline outline-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] focus:shadow-primary dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
+        'custom-style focus:shadow-primary relative block rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
         {
-          'text-secondary before:absolute before:-left-[28px] before:top-0 before:h-8 before:w-2 before:rounded-e-full before:bg-accent':
+          'text-secondary before:bg-accent before:absolute before:top-0 before:-left-[28px] before:h-8 before:w-2 before:rounded-e-full':
             isActive(href, currentUri),
         },
       )}
@@ -326,9 +326,9 @@ const MobileMenuLink = ({ href, children, currentUri }) => {
 const DropDownMenu = ({ to, children, currentUri }) => (
   <NavigationMenu.Trigger
     className={clsx(
-      'custom-style group relative flex select-none items-center justify-between gap-1 rounded-full px-4 py-2 text-sm font-semibold leading-none text-zinc-600 outline-none hover:bg-white/20 hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] focus:shadow-primary dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
+      'custom-style group focus:shadow-primary relative flex items-center justify-between gap-1 rounded-full px-4 py-2 text-sm leading-none font-semibold text-zinc-600 outline-none select-none hover:bg-white/20 hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
       {
-        'text-secondary before:absolute before:-top-[0.47rem] before:left-0 before:z-10 before:block before:h-1 before:w-full before:rounded-b-full before:bg-accent':
+        'text-secondary before:bg-accent before:absolute before:-top-[0.47rem] before:left-0 before:z-10 before:block before:h-1 before:w-full before:rounded-b-full':
           isActive(to, currentUri),
       },
     )}
@@ -344,9 +344,9 @@ const MobileDropDownMenu = ({ href, children, currentUri }) => {
   return (
     <NavigationMenu.Trigger
       className={clsx(
-        'custom-style group relative flex select-none items-center justify-between gap-1 rounded-full px-3 py-2 text-sm font-medium leading-none text-zinc-600 no-underline outline-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] focus:shadow-primary dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
+        'custom-style group focus:shadow-primary relative flex items-center justify-between gap-1 rounded-full px-3 py-2 text-sm leading-none font-medium text-zinc-600 no-underline outline-none select-none hover:bg-zinc-200 hover:text-zinc-900 focus:shadow-[0_0_0_2px] dark:text-zinc-50 dark:hover:bg-white/20 dark:hover:text-zinc-100 dark:focus:shadow-zinc-200',
         {
-          'text-secondary before:absolute before:-left-[28px] before:top-0 before:h-8 before:w-1 before:bg-accent':
+          'text-secondary before:bg-accent before:absolute before:top-0 before:-left-[28px] before:h-8 before:w-1':
             isActive(href, currentUri),
         },
       )}
@@ -366,7 +366,7 @@ const MegaMenuChrome = ({ children, className }) => (
 );
 const MegaMenuItem = ({ children, title, containerCss }) => (
   <div className={clsx('grow pl-6 align-top', containerCss)}>
-    {title && <p className="text-lg font-bold uppercase text-zinc-600 md:text-sm">{title}</p>}
+    {title && <p className="text-lg font-bold text-zinc-600 uppercase md:text-sm">{title}</p>}
     <ul className="m-0 grid list-none">{children}</ul>
   </div>
 );
@@ -375,7 +375,7 @@ const ListItem = React.forwardRef(({ className, children, title, ...props }, for
     <NavigationMenu.Link asChild>
       <a
         className={clsx(
-          'custom-style block cursor-pointer select-none rounded p-3 text-base no-underline outline-none hover:bg-zinc-100 focus:shadow-[0_0_0_2px] focus:shadow-primary sm:py-1',
+          'custom-style focus:shadow-primary block cursor-pointer rounded p-3 text-base no-underline outline-none select-none hover:bg-zinc-100 focus:shadow-[0_0_0_2px] sm:py-1',
           className,
         )}
         {...props}
@@ -392,7 +392,7 @@ const MobileListItem = React.forwardRef(({ className, children, ...props }, forw
     <NavigationMenu.Link asChild>
       <a
         className={clsx(
-          'custom-style block cursor-pointer select-none rounded-full p-3 no-underline outline-none hover:bg-zinc-200 focus:shadow-[0_0_0_2px] focus:shadow-primary sm:py-1 dark:hover:bg-white/20 dark:focus:shadow-zinc-200',
+          'custom-style focus:shadow-primary block cursor-pointer rounded-full p-3 no-underline outline-none select-none hover:bg-zinc-200 focus:shadow-[0_0_0_2px] sm:py-1 dark:hover:bg-white/20 dark:focus:shadow-zinc-200',
           className,
         )}
         {...props}

@@ -9,7 +9,7 @@ const id = updated.toISOString().replaceAll(':', '-').replaceAll('.', '-');
 ---
 
 <p>
-  <span class="font-bold text-primary dark:text-accent">
+  <span class="text-primary dark:text-accent font-bold">
     <time id={`time-${id}`} datetime={updated.toISOString()}>{updated}</time>
   </span>
 </p>

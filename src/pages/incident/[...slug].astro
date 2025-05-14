@@ -1,5 +1,5 @@
 ---
-import {render} from 'astro:content';
+import { render } from 'astro:content';
 import Layout from '@layouts/FullWidth.astro';
 
 import BreadCrumbs from '@components/BreadCrumbs.astro';
@@ -24,7 +24,7 @@ const { Content } = await render(incident);
 
 <Layout bannerHeading="Incident information" pageTitle={incident.data.title} pageDescription={incident.data.snippet}>
   <BreadCrumbs path={Astro.url.pathname} slot="crumbs" />
-  <section class="w-full bg-white pb-16 pt-10 dark:bg-zinc-900 dark:text-zinc-300">
+  <section class="w-full bg-white pt-10 pb-16 dark:bg-zinc-900 dark:text-zinc-300">
     <div class="mx-auto grid grow grid-cols-1 gap-12 md:max-w-screen-lg lg:px-8 2xl:px-0">
       <div class="flex flex-1 flex-col gap-6 self-center">
         <div class="mx-auto my-3 max-w-screen-md space-y-6">
@@ -32,7 +32,7 @@ const { Content } = await render(incident);
             <span>
               <h1 class="text-zinc-700 dark:text-zinc-50">{startcase(incident.data.title)}</h1>
               <div class="flex justify-center gap-1 text-sm">
-                <span class="whitespace-nowrap font-semibold text-primary/80 dark:text-white">Published</span>
+                <span class="text-primary/80 font-semibold whitespace-nowrap dark:text-white">Published</span>
                 <span>·</span>
                 <span class="whitespace-nowrap uppercase">
                   {month}
@@ -44,15 +44,15 @@ const { Content } = await render(incident);
               <p>
                 affected systems: {
                   (
-                    <span class="font-bold text-primary dark:text-accent">
+                    <span class="text-primary dark:text-accent font-bold">
                       {incident.data.affectedSystems.join(', ')}
                     </span>
                   )
                 }
               </p>
-              <p>severity: <span class="font-bold text-primary dark:text-accent">{incident.data.severity}</span></p>
+              <p>severity: <span class="text-primary dark:text-accent font-bold">{incident.data.severity}</span></p>
               <p>
-                resolved: <span class="font-bold text-primary dark:text-accent"
+                resolved: <span class="text-primary dark:text-accent font-bold"
                   >{incident.data.resolved ? 'yes' : 'no'}</span
                 >
               </p>

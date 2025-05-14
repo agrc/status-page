@@ -21,8 +21,8 @@ const sha = import.meta.env.COMMIT_REF?.substring(0, 8) ?? 'dev';
           <Image src={govOpsLogo} width="320" alt="Department of Government Operations" />
         </div>
         <div class="mt-4 text-lg">
-          <div class="whitespace-nowrap font-semibold">Division of Technology Services</div>
-          <div class="whitespace-nowrap font-medium">Utah Geospatial Resource Center</div>
+          <div class="font-semibold whitespace-nowrap">Division of Technology Services</div>
+          <div class="font-medium whitespace-nowrap">Utah Geospatial Resource Center</div>
         </div>
       </div>
       <div class="mt-4">
@@ -31,113 +31,113 @@ const sha = import.meta.env.COMMIT_REF?.substring(0, 8) ?? 'dev';
       </div>
     </div>
     <div>
-      <div class="whitespace-nowrap font-bold">Main Menu</div>
+      <div class="font-bold whitespace-nowrap">Main Menu</div>
       <ul class="grid gap-2 pl-1 text-sm leading-loose md:gap-0">
         <li class="mt-4 block">
           <a
             href="https://gis.utah.gov/"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent">Home</a
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Home</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/products"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent">Products</a
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Products</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/solutions"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent">Solutions</a
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Solutions</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/documentation"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent"
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
             >Documentation</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/collaboration"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent"
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
             >Collaboration</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/blog"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent">Blog</a
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Blog</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/about"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent">About</a
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">About</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/contact"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent">Contact</a
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">Contact</a
           >
         </li>
       </ul>
     </div>
     <div>
-      <div class="whitespace-nowrap font-bold">Helpful Links</div>
+      <div class="font-bold whitespace-nowrap">Helpful Links</div>
       <ul class="grid gap-2 pl-1 text-sm leading-loose md:gap-0">
         <li class="mt-4 block">
           <a
             href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent"
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
             >Content contributing guide</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/about/media"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent"
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
             >Logos and media resources</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/documentation/policy"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent"
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
             >UGRC Policies</a
           >
         </li>
         <li>
           <a
             href="https://gis.utah.gov/about/code"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent"
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
             >GIS-related Utah statute</a
           >
         </li>
         <li>
           <a
             href="https://s.utah.gov/ugrc-newsletter"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent"
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
             >Sign up for our newsletter</a
           >
         </li>
       </ul>
     </div>
     <div>
-      <div class="whitespace-nowrap font-bold">Website Information</div>
+      <div class="font-bold whitespace-nowrap">Website Information</div>
       <ul class="grid gap-2 pl-1 text-sm leading-loose md:gap-0">
         <li class="mt-4 block">
           Build: <a
             href={`https://github.com/agrc/status-page/commit/${sha}`}
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent">{sha}</a
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none">{sha}</a
           >
         </li>
         <li>
           <a
             href="https://github.com/agrc/status-page/issues/new"
-            class="custom-style rounded hover:underline focus:outline-none focus:ring-1 focus:ring-accent"
+            class="custom-style focus:ring-accent rounded hover:underline focus:ring-1 focus:outline-none"
             >Report an issue</a
           >
         </li>
