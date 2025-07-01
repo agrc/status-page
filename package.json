@@ -46,7 +46,7 @@
     "@types/html-to-text": "^9.0.4",
     "@types/lodash.capitalize": "^4.2.9",
     "@types/lodash.startcase": "^4.4.9",
-    "@types/node": "^22.15.29",
+    "@types/node": "^24.0.10",
     "@types/react": "^19.1.6",
     "@types/react-dom": "^19.1.5",
     "prettier": "^3.5.3",
