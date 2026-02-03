@@ -1,5 +1,9 @@
 name: Issue opened (new incident)
 
+permissions:
+  issues: write
+  pull-requests: write
+
 on:
   issues:
     types: [opened]
