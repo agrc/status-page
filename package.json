@@ -1,16 +1,17 @@
 {
   "name": "status-gis-utah-gov",
-  "type": "module",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
     "astro": "astro",
+    "build": "pnpm generate-license-file && astro check && astro build",
     "check": "astro check --minimumSeverity=warning",
-    "ts-check": "astro check",
-    "format": "prettier \"src/**/*.{astro,js,jsx,ts,json,mjs,md,mdx}\" --write"
+    "dev": "astro dev",
+    "format": "prettier \"src/**/*.{astro,js,jsx,ts,json,mjs,md,mdx}\" --write",
+    "generate-license-file": "generate-license-file --config glf.json",
+    "preview": "astro preview",
+    "start": "astro dev",
+    "ts-check": "astro check"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.6",
@@ -49,6 +50,7 @@
     "@types/node": "^24.10.4",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
+    "generate-license-file": "^4.1.1",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-organize-imports": "^4.3.0",
