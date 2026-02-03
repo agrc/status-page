@@ -18,3 +18,7 @@ Inside of this project, you'll see the following folders and files:
 ```
 
 This is where the current and previous incident posts are. If you need to edit one, you can find it in there.
+
+## Attribution
+
+This project was developed with the assistance of [GitHub Copilot](https://github.com/features/copilot).
