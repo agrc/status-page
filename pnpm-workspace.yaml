@@ -1,6 +1,10 @@
 packages:
-  - .
   - scripts
+
+minimumReleaseAge: 10080
+minimumReleaseAgeStrict: true
+minimumReleaseAgeExclude:
+  - '@ugrc/*'
 
 onlyBuiltDependencies:
   - esbuild
