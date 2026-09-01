@@ -36,6 +36,7 @@
     "micromark-extension-mdxjs": "^3.0.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
+    "sharp": "^0.35.3",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
