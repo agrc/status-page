@@ -12,7 +12,7 @@ const banner = await getImage({ src: image, format: 'webp' });
 ---
 
 <div
-  class="border-primary-100 before:from-primary-100 before:via-secondary-100 relative z-1 flex h-[150px] max-h-[150px] w-full justify-end border-b-2 bg-cover before:absolute before:inset-0 before:bg-linear-to-r before:to-transparent before:opacity-60 dark:border-zinc-900/85"
+  class="border-primary-100 before:from-primary-100 before:via-secondary-100 relative z-1 flex h-[150px] max-h-[150px] w-full justify-end border-b-2 bg-primary-100 bg-cover before:absolute before:inset-0 before:bg-linear-to-r before:to-transparent before:opacity-60 dark:border-zinc-900/85"
   style={{
     backgroundImage: `url(${banner.src})`,
   }}
@@ -31,7 +31,7 @@ const banner = await getImage({ src: image, format: 'webp' });
         <div class="relative min-w-px border-0">
           <div class="flex">
             <div class="block max-w-full min-w-px grow">
-              <p class="line-clamp-2 text-right text-3xl font-bold text-zinc-50 md:text-4xl lg:line-clamp-none">
+              <p class="font-ut line-clamp-2 text-right text-3xl font-bold text-zinc-50 md:text-4xl lg:line-clamp-none">
                 {title}
               </p>
             </div>
