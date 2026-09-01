@@ -24,9 +24,9 @@ const { pageTitle = 'UGRC', bannerHeading, image } = Astro.props;
       <div id="utah-header-placeholder"></div>
       <UtahChrome />
       <Banner title={bannerHeading || pageTitle} />
-      <main id="main-content" class="flex min-h-0 flex-1 flex-col">
+      <div class="flex min-h-0 flex-1 flex-col">
         <slot />
-      </main>
+      </div>
     </div>
     <footer>
       <SocialMedia />
