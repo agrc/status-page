@@ -1,11 +1,12 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-primary-100: #4d2a54;
-  --color-primary-950: #36163c;
-  --color-secondary-100: #33505d;
-  --color-secondary-200: #4d7b8d;
-  --color-accent-100: #eaca00;
+  --color-primary-100: #52393b;
+  --color-primary-950: #2c1e1b;
+  --color-secondary-100: #a34818;
+  --color-secondary-200: #e9c997;
+  --color-accent-100: #ff8c03;
+  --font-sans: 'Source Sans 3', 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif;
 
   --animate-shake: shake 0.1s ease-out;
   @keyframes shake {
@@ -27,11 +28,18 @@
   }
 }
 
+@utility font-ut {
+  font-family: var(--ut-industry-font-family), Georgia, serif;
+}
+
 @layer base {
   html,
   body,
   #root {
     @apply h-full min-h-full w-full;
+  }
+  body {
+    font-family: var(--font-sans);
   }
   .stripe-background a:not(.custom-style) {
     @apply text-secondary-100 hover:text-primary-100 dark:text-accent-100 hover:dark:text-accent-100;
@@ -49,10 +57,10 @@
     @apply text-primary-100 dark:text-accent-100 font-semibold hover:bg-black/10 dark:hover:bg-white/10;
   }
   h1 {
-    @apply text-3xl font-bold md:text-4xl;
+    @apply font-ut text-3xl font-bold md:text-4xl;
   }
   h2 {
-    @apply text-2xl font-bold md:text-3xl;
+    @apply font-ut text-2xl font-bold md:text-3xl;
   }
   h3 {
     @apply text-xl font-bold md:text-2xl;
@@ -70,9 +78,16 @@
     @apply mx-px rounded-md border bg-white px-2 py-0.5 text-sm font-medium shadow-sm drop-shadow-md dark:text-zinc-700;
   }
   @font-face {
-    font-family: 'SourceSansPro-Regular';
+    font-family: 'Source Sans 3';
     src: url('/fonts/SourceSans3-Regular.otf.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Source Sans 3';
+    src: url('/fonts/SourceSans3-Bold.otf.woff2') format('woff2');
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
   }
@@ -81,4 +96,12 @@
   .astro-code {
     @apply rounded-lg p-3;
   }
+}
+
+.utah-design-system {
+  --header-title-color: #000;
+}
+
+.utah-design-system .utds-title-wrapper__title {
+  color: #000;
 }
