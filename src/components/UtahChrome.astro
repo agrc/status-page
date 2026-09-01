@@ -1,0 +1,62 @@
+<script>
+  import { setUtahHeaderSettings, sizes, type ActionItem, type MenuItem } from '@utahdts/utah-design-system-header';
+
+  const products: MenuItem[] = [
+    { title: 'SGID', actionUrl: { url: 'https://gis.utah.gov/products/sgid' } },
+    { title: 'Discover', actionUrl: { url: 'https://gis.utah.gov/products/discover' } },
+    { title: 'TURN GPS', actionUrl: { url: 'https://gis.utah.gov/products/turn' } },
+    { title: 'UGRC API', actionUrl: { url: 'https://gis.utah.gov/products/api' } },
+  ];
+
+  const solutions: MenuItem[] = [
+    { title: 'Government employees', actionUrl: { url: 'https://gis.utah.gov/solutions/for-government' } },
+    { title: 'GIS users', actionUrl: { url: 'https://gis.utah.gov/solutions/for-gis-users' } },
+    { title: 'Application developers', actionUrl: { url: 'https://gis.utah.gov/solutions/for-application-developers' } },
+    { title: 'Surveyors', actionUrl: { url: 'https://gis.utah.gov/solutions/for-surveyors' } },
+    { title: 'Students', actionUrl: { url: 'https://gis.utah.gov/solutions/for-students' } },
+    { title: 'Spatial data management', actionUrl: { url: 'https://gis.utah.gov/solutions/spatial-data-management' } },
+    { title: 'Emergency response (911)', actionUrl: { url: 'https://gis.utah.gov/solutions/for-emergency-response' } },
+    { title: 'GIS strategy', actionUrl: { url: 'https://gis.utah.gov/solutions/gis-strategy' } },
+    { title: 'Integrating GIS', actionUrl: { url: 'https://gis.utah.gov/solutions/gis-integration' } },
+    { title: 'High precision location', actionUrl: { url: 'https://gis.utah.gov/solutions/high-precision-location' } },
+  ];
+
+  const links: MenuItem[] = [
+    { title: 'Home', actionUrl: { url: 'https://gis.utah.gov/' } },
+    { title: 'Products', actionUrl: { url: 'https://gis.utah.gov/products' }, actionMenu: products },
+    { title: 'Solutions', actionUrl: { url: 'https://gis.utah.gov/solutions' }, actionMenu: solutions },
+    { title: 'Documentation', actionUrl: { url: 'https://gis.utah.gov/documentation' } },
+    { title: 'Collaboration', actionUrl: { url: 'https://gis.utah.gov/collaboration' } },
+    { title: 'Blog', actionUrl: { url: 'https://gis.utah.gov/blog' } },
+    { title: 'About', actionUrl: { url: 'https://gis.utah.gov/about' } },
+    { title: 'Contact', actionUrl: { url: 'https://gis.utah.gov/contact' } },
+  ];
+
+  const actionItems: ActionItem[] = [
+    {
+      title: 'UGRC links',
+      showTitle: false,
+      icon: '<span class="utds-icon-before-waffle" aria-hidden="true" />',
+      actionPopupMenu: { title: 'UGRC links', menuItems: links },
+    },
+  ];
+
+  setUtahHeaderSettings({
+    applicationType: 'custom application',
+    title: 'UGRC System Status',
+    titleUrl: '/',
+    skipLinkUrl: '#main-content',
+    showTitle: true,
+    size: sizes.MEDIUM,
+    logo: { imageUrl: '/ugrc-logo.png' },
+    domLocationTarget: { cssSelector: '#utah-header-placeholder' },
+    mainMenu: false,
+    actionItems,
+    utahId: false,
+    onSearch: false,
+    footer: {
+      showHorizontalRule: false,
+      domLocationTarget: { cssSelector: '#utah-footer-placeholder' },
+    },
+  });
+</script>
