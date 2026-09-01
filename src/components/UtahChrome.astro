@@ -1,14 +1,14 @@
-<script lang="ts">
-  import { setUtahHeaderSettings, sizes, type ActionItem, type MenuItem } from '@utahdts/utah-design-system-header';
+<script>
+  import { setUtahHeaderSettings, sizes } from '@utahdts/utah-design-system-header';
 
-  const products: MenuItem[] = [
+  const products = [
     { title: 'SGID', actionUrl: { url: 'https://gis.utah.gov/products/sgid' } },
     { title: 'Discover', actionUrl: { url: 'https://gis.utah.gov/products/discover' } },
     { title: 'TURN GPS', actionUrl: { url: 'https://gis.utah.gov/products/turn' } },
     { title: 'UGRC API', actionUrl: { url: 'https://gis.utah.gov/products/api' } },
   ];
 
-  const solutions: MenuItem[] = [
+  const solutions = [
     { title: 'Government employees', actionUrl: { url: 'https://gis.utah.gov/solutions/for-government' } },
     { title: 'GIS users', actionUrl: { url: 'https://gis.utah.gov/solutions/for-gis-users' } },
     { title: 'Application developers', actionUrl: { url: 'https://gis.utah.gov/solutions/for-application-developers' } },
@@ -21,7 +21,7 @@
     { title: 'High precision location', actionUrl: { url: 'https://gis.utah.gov/solutions/high-precision-location' } },
   ];
 
-  const links: MenuItem[] = [
+  const links = [
     { title: 'Home', actionUrl: { url: 'https://gis.utah.gov/' } },
     { title: 'Products', actionUrl: { url: 'https://gis.utah.gov/products' }, actionMenu: products },
     { title: 'Solutions', actionUrl: { url: 'https://gis.utah.gov/solutions' }, actionMenu: solutions },
@@ -32,7 +32,7 @@
     { title: 'Contact', actionUrl: { url: 'https://gis.utah.gov/contact' } },
   ];
 
-  const actionItems: ActionItem[] = [
+  const actionItems = [
     {
       title: 'UGRC links',
       showTitle: false,
