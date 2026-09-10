@@ -26,7 +26,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.22",
     "@radix-ui/react-popover": "^1.1.23",
     "@utahdts/utah-design-system-header": "^5.3.0",
-    "astro": "^7.2.6",
+    "astro": "^7.2.8",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "html-to-text": "^10.0.1",
