@@ -1,12 +1,15 @@
 ---
 title: UGRC API Down
-date: '2026-10-07T13:59:59.000Z'
+date: '2026-10-07T09:22:59.000Z'
 severity: partial-outage
 affectedSystems:
   - ugrc api
-resolved: false
+resolved: true
 ---
 import Update from '@components/status/Update.astro';
 
 The search and geocoding api endpoints are returning 500 errors. We are investigating the issue. The explorer and developer websites still appear to be functioning.
 
+<Update date="2026-10-07T14:21:59.000Z">
+  The issue has been resolved. Increased usage overnight caused the containers to run out of memory.
+</Update>
