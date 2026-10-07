@@ -1,6 +1,7 @@
 name: Issue opened (new incident)
 
 permissions:
+  contents: write
   issues: write
   pull-requests: write
 
