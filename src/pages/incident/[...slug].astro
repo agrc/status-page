@@ -19,6 +19,10 @@ export async function getStaticPaths() {
 const incident = Astro.props as DecoratedIncidentEntry;
 
 const { year, month, day } = getDateParts(incident.data.date);
+const time = incident.data.date.toLocaleTimeString('en-us', {
+  hour: 'numeric',
+  minute: '2-digit',
+});
 const { Content } = await render(incident);
 ---
 
@@ -32,11 +36,10 @@ const { Content } = await render(incident);
             <span>
               <h1 class="text-zinc-700 dark:text-zinc-50">{startcase(incident.data.title)}</h1>
               <div class="flex justify-center gap-1 text-sm">
-                <span class="text-primary-100/80 font-semibold whitespace-nowrap dark:text-white">Published</span>
+                <span class="text-primary-100/80 font-semibold whitespace-nowrap dark:text-white">Reported</span>
                 <span>·</span>
                 <span class="whitespace-nowrap uppercase">
-                  {month}
-                  {day}, {year}
+                  {month} {day}, {year} at {time}
                 </span>
               </div>
             </span>

@@ -18,5 +18,16 @@ const id = updated.toISOString().replaceAll(':', '-').replaceAll('.', '-');
 </div>
 <script is:inline define:vars={{ id }}>
   const time = document.querySelector(`#time-${id}`);
-  time.textContent = new Date(time.getAttribute('datetime')).toLocaleString();
+  const updated = new Date(time.getAttribute('datetime'));
+  const date = updated.toLocaleDateString('en-us', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+  const formattedTime = updated.toLocaleTimeString('en-us', {
+    hour: 'numeric',
+    minute: '2-digit',
+  });
+
+  time.textContent = `${date} at ${formattedTime}`;
 </script>
