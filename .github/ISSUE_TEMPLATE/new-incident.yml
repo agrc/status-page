@@ -16,7 +16,7 @@ body:
         Find your file in the new branch and explain the situation.
         When you're ready to publish, create a pull request.
 
-        You do not need to enter or convert the incident date. When adding updates to the markdown file, use an ISO 8601 timestamp with a timezone, preferably UTC with a trailing `Z` (for example, `2026-10-30T13:00:00.000Z`). Dates and times are displayed in each visitor's local timezone.
+        You do not need to enter or convert the incident date. When adding updates to the markdown file, use Utah local time with an explicit ISO 8601 offset: `-06:00` during MDT or `-07:00` during MST. For example, `2026-10-30T07:00:00-06:00` is 7:00 AM MDT. Use the offset that applies on the update date; dates and times are displayed in each visitor's local timezone.
   - type: input
     id: name
     attributes:

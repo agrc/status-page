@@ -6,7 +6,7 @@ To create a new incident, use the `New incident` [issue template](https://github
 
 The incident's reported date is generated automatically when you submit the form and stored as a UTC timestamp. The page displays it in each visitor's local timezone, so you do not need to enter or convert a date.
 
-When adding an update directly to an incident file, use an ISO 8601 timestamp with a timezone. Prefer UTC with a trailing `Z`, for example: `<Update date="2026-10-30T13:00:00.000Z">Update text</Update>`. The update will also display in each visitor's local timezone.
+When adding an update directly to an incident file, use Utah local time with an explicit ISO 8601 offset: `-06:00` during MDT or `-07:00` during MST. For example, `<Update date="2026-10-30T07:00:00-06:00">Update text</Update>` is 7:00 AM MDT. Use the offset that applies on the update date; the displayed time is then localized for each visitor.
 
 ## 🚀 Project Structure
 
