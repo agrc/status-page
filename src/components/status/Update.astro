@@ -5,29 +5,13 @@ type Props = {
 
 const { date } = Astro.props;
 const updated = new Date(date);
-const id = updated.toISOString().replaceAll(':', '-').replaceAll('.', '-');
 ---
 
 <p>
   <span class="text-primary-100 dark:text-accent-100 font-bold">
-    <time id={`time-${id}`} datetime={updated.toISOString()}>{updated}</time>
+    <time datetime={updated.toISOString()} data-local-format="date-time">{updated.toISOString()}</time>
   </span>
 </p>
 <div>
   <slot />
 </div>
-<script is:inline define:vars={{ id }}>
-  const time = document.querySelector(`#time-${id}`);
-  const updated = new Date(time.getAttribute('datetime'));
-  const date = updated.toLocaleDateString('en-us', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-  });
-  const formattedTime = updated.toLocaleTimeString('en-us', {
-    hour: 'numeric',
-    minute: '2-digit',
-  });
-
-  time.textContent = `${date} at ${formattedTime}`;
-</script>

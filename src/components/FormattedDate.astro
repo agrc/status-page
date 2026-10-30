@@ -7,39 +7,43 @@ interface Props {
 const { date, style } = Astro.props;
 ---
 
-<time datetime={date.toISOString()}>
+<time datetime={date.toISOString()} data-local-format={style}>
   {
     style === 'long' && (
-      <div class="text-primary-100/80 dark:text-accent-100 text-center font-medium">
+      <span data-date-part="long-date" class="text-primary-100/80 dark:text-accent-100 text-center font-medium">
         {date.toLocaleDateString('en-us', {
           month: 'short',
           year: 'numeric',
           day: 'numeric',
+          timeZone: 'UTC',
         })}
-      </div>
+      </span>
     )
   }
   {
     style.startsWith('short') && (
-      <div class="flex flex-col items-center justify-center">
-        <div class="text-primary-100/90 dark:text-accent-100 text-center font-medium">
+      <span class="flex flex-col items-center justify-center">
+        <span data-date-part="month" class="text-primary-100/90 dark:text-accent-100 text-center font-medium">
           {date.toLocaleDateString('en-us', {
             month: 'short',
+            timeZone: 'UTC',
           })}
-        </div>
-        <div class="text-primary-100/80 dark:text-accent-100 w-16 text-center text-3xl font-bold">
+        </span>
+        <span data-date-part="day" class="text-primary-100/80 dark:text-accent-100 w-16 text-center text-3xl font-bold">
           {date.toLocaleDateString('en-us', {
             day: 'numeric',
+            timeZone: 'UTC',
           })}
-        </div>
+        </span>
         {style === 'short-with-year' && (
-          <div class="text-primary-100/80 dark:text-accent-100 text-center font-medium">
+          <span data-date-part="year" class="text-primary-100/80 dark:text-accent-100 text-center font-medium">
             {date.toLocaleDateString('en-us', {
               year: 'numeric',
+              timeZone: 'UTC',
             })}
-          </div>
+          </span>
         )}
-      </div>
+      </span>
     )
   }
 </time>

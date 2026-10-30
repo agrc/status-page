@@ -26,10 +26,12 @@ const { year, month, day } = getDateParts(date);
     </div>
     <time
       datetime={date.toISOString()}
+      data-local-format="incident-card"
       class="bg-secondary-200 dark:bg-secondary-100 flex items-center justify-between px-4 py-1 text-zinc-50 dark:text-zinc-300"
     >
-      <span class="font-black">{year}</span>
-      <span class="text-xs uppercase">{month} {day}</span></time
+      <span data-date-part="year" class="font-black">{year}</span>
+      {' '}
+      <span data-date-part="month-day" class="text-xs uppercase">{month} {day}</span></time
     >
   </a>
 </div>

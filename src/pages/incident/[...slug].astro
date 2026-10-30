@@ -22,6 +22,7 @@ const { year, month, day } = getDateParts(incident.data.date);
 const time = incident.data.date.toLocaleTimeString('en-us', {
   hour: 'numeric',
   minute: '2-digit',
+  timeZone: 'UTC',
 });
 const { Content } = await render(incident);
 ---
@@ -38,9 +39,14 @@ const { Content } = await render(incident);
               <div class="flex justify-center gap-1 text-sm">
                 <span class="text-primary-100/80 font-semibold whitespace-nowrap dark:text-white">Reported</span>
                 <span>·</span>
-                <span class="whitespace-nowrap uppercase">
-                  {month} {day}, {year} at {time}
-                </span>
+                <time
+                  datetime={incident.data.date.toISOString()}
+                  data-local-format="date-time"
+                  class="whitespace-nowrap uppercase"
+                >
+                  {month}
+                  {day}, {year} at {time} UTC
+                </time>
               </div>
             </span>
             <div class="flex justify-between gap-6">
