@@ -32,5 +32,10 @@ const { pageTitle = 'UGRC', bannerHeading, image } = Astro.props;
       <SocialMedia />
       <div id="utah-footer-placeholder"></div>
     </footer>
+    <script>
+      import { localizeTimes } from '@utils/localize-times';
+
+      localizeTimes();
+    </script>
   </body>
 </html>
